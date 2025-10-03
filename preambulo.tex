@@ -1,0 +1,82 @@
+% ==================================================================
+% ARCHIVO PRINCIPAL DE LA TESIS - main.tex
+% ==================================================================
+% Solo este archivo se compila. Los demás se incluyen automáticamente.
+
+\documentclass[12pt,a4paper,twoside]{report}
+
+% ==================================================================
+% PREÁMBULO: Todos los paquetes y configuraciones
+% ==================================================================
+\input{preambulo.tex}
+
+% ==================================================================
+% INFORMACIÓN DEL DOCUMENTO
+% ==================================================================
+\title{Título de mi Tesis Doctoral}
+\author{Mi Nombre Completo}
+\date{\today}
+
+% Para referencias con natbib
+\bibliographystyle{apalike}
+
+% ==================================================================
+% INICIO DEL DOCUMENTO
+% ==================================================================
+\begin{document}
+
+% ------------------------------------------------------------------
+% PÁGINAS PRELIMINARES
+% ------------------------------------------------------------------
+\frontmatter  % Numeración romana para páginas preliminares
+
+\input{portada.tex}
+
+% Página en blanco después de portada (estilo libro)
+\cleardoublepage
+
+\input{agradecimientos.tex}
+\cleardoublepage
+
+\input{resumen.tex}
+\cleardoublepage
+
+% Tabla de contenidos
+\tableofcontents
+\cleardoublepage
+
+% Lista de figuras (opcional)
+\listoffigures
+\cleardoublepage
+
+% Lista de tablas (opcional)
+\listoftables
+\cleardoublepage
+
+% ------------------------------------------------------------------
+% CONTENIDO PRINCIPAL
+% ------------------------------------------------------------------
+\mainmatter  % Numeración arábiga para capítulos principales
+
+% Incluir cada capítulo
+\input{capitulos/01_introduccion.tex}
+\input{capitulos/02_marco_teorico.tex}
+\input{capitulos/03_metodologia.tex}
+\input{capitulos/04_resultados.tex}
+\input{capitulos/05_discusion.tex}
+\input{capitulos/06_conclusiones.tex}
+
+% ------------------------------------------------------------------
+% BIBLIOGRAFÍA
+% ------------------------------------------------------------------
+\cleardoublepage
+\bibliography{referencias}
+
+% ------------------------------------------------------------------
+% APÉNDICES
+% ------------------------------------------------------------------
+\appendix
+\input{apendices/apendice_a.tex}
+\input{apendices/apendice_b.tex}
+
+\end{document}

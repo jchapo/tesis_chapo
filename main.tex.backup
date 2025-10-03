@@ -1,0 +1,28 @@
+% cSpell:language es,en
+\documentclass[12pt,a4paper]{report}
+
+% Paquetes completos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{natbib}
+\usepackage{hyperref}
+
+\title{Mi Tesis Doctoral}
+\author{Juan Alfonso}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\cleardoublepage
+
+\input{capitulos/01_introduccion.tex}
+
+\bibliographystyle{apalike}
+\bibliography{referencias}
+
+\end{document}

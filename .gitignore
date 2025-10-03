@@ -1,0 +1,38 @@
+# Archivos auxiliares de LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.acn
+*.acr
+*.alg
+*.glg
+
+# Mantener solo el PDF final
+*.pdf
+!main.pdf
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de editores
+*~
+*.swp
+*.swo
+.vscode/settings.json.backup

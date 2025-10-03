@@ -1,0 +1,34 @@
+{
+    "version": "0.2",
+    "language": "es,en",
+    "words": [
+        "framework",
+        "machine",
+        "learning",
+        "optimizarse",
+        "metodológica",
+        "científicos",
+        "automático",
+        "implementar",
+        "algoritmos",
+        "específicos",
+        "tradicionales",
+        "procesamiento",
+        "usabilidad",
+        "tecnológica"
+    ],
+    "ignoreRegExpList": [
+        "\\\\[a-zA-Z*]+(?:\\[[^\\]]*\\])?\\{[^}]*\\}",
+        "\\\\[a-zA-Z*]+",
+        "%.*$",
+        "\\\\label\\{[^}]*\\}",
+        "\\\\ref\\{[^}]*\\}",
+        "\\\\cite[pt]?\\{[^}]*\\}"
+    ],
+    "languageSettings": [
+        {
+            "languageId": "latex",
+            "caseSensitive": false
+        }
+    ]
+}
