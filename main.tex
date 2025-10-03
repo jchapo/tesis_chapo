@@ -1,28 +1,96 @@
 % cSpell:language es,en
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper,oneside]{report}
 
-% Paquetes completos
-\usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{geometry}
-\geometry{margin=2.5cm}
-\usepackage[numbers,sort&compress]{natbib}  % Para estilo numérico IEEE
-\usepackage{hyperref}
+% ==================================================================
+% PREÁMBULO: Todos los paquetes y configuraciones
+% ==================================================================
+\input{preambulo.tex}
 
-\title{Mi Tesis Doctoral}
-\author{Juan Alfonso}
-\date{\today}
+% ==================================================================
+% INFORMACIÓN DEL DOCUMENTO
+% ==================================================================
+\title{Diseño e Implementación de una Plataforma Web y Aplicación Móvil con Procesamiento de Imágenes con Inteligencia Artificial Multimodal en la Nube para la Identificación de Pagos, Estimación de Dimensiones y Optimización Logística en Servicios de Delivery Urbano en Lima}
+\author{Juan Alfonso Chapoñan Espinoza}
+\date{Lima, junio, 2025}
 
+% ==================================================================
+% INICIO DEL DOCUMENTO
+% ==================================================================
 \begin{document}
 
-\maketitle
+% ------------------------------------------------------------------
+% PÁGINAS PRELIMINARES
+% ------------------------------------------------------------------
+\frontmatter  % Numeración romana para páginas preliminares
+
+\input{portada.tex}
+\cleardoublepage
+
+% Informe de Similitud
+\input{informe_similitud.tex}
+\cleardoublepage
+
+% Dedicatoria
+\input{dedicatoria.tex}
+\cleardoublepage
+
+% Agradecimientos
+\input{agradecimientos.tex}
+\cleardoublepage
+
+% Resumen y Abstract
+\input{resumen.tex}
+\cleardoublepage
+
+% Tabla de contenidos
 \tableofcontents
 \cleardoublepage
 
-\input{capitulos/01_introduccion.tex}
+% Lista de tablas
+\listoftables
+\cleardoublepage
 
-\bibliographystyle{IEEEtran}  % Estilo IEEE
-\bibliography{referencias}
+% Lista de figuras
+\listoffigures
+\cleardoublepage
+
+% Glosario
+\input{glosario.tex}
+\cleardoublepage
+
+% ------------------------------------------------------------------
+% CONTENIDO PRINCIPAL
+% ------------------------------------------------------------------
+\mainmatter  % Numeración arábiga para capítulos principales
+
+% Introducción (sin número de capítulo)
+\input{introduccion.tex}
+
+% Capítulos numerados
+\input{capitulos/01_presentacion_problema.tex}
+\input{capitulos/02_estado_arte.tex}
+% Agrega aquí más capítulos según avances:
+% \input{capitulos/03_metodologia.tex}
+% \input{capitulos/04_resultados.tex}
+% \input{capitulos/05_conclusiones.tex}
+
+% ------------------------------------------------------------------
+% CONCLUSIONES Y RECOMENDACIONES
+% ------------------------------------------------------------------
+\input{conclusiones.tex}
+\input{recomendaciones.tex}
+
+% ------------------------------------------------------------------
+% BIBLIOGRAFÍA
+% ------------------------------------------------------------------
+\cleardoublepage
+\printbibliography[title={Referencias Bibliográficas}]
+\addcontentsline{toc}{chapter}{Referencias Bibliográficas}
+
+% ------------------------------------------------------------------
+% ANEXOS
+% ------------------------------------------------------------------
+\appendix
+\input{apendices/anexos.tex}
 
 \end{document}

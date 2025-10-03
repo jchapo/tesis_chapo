@@ -1,0 +1,208 @@
+% cSpell:language es,en
+% ==================================================================
+% CAPÍTULO 1: PRESENTACIÓN DEL PROBLEMA DE INGENIERÍA
+% ==================================================================
+
+\chapter{Presentación del problema de ingeniería}
+
+La transformación digital en el sector logístico demanda soluciones innovadoras que aprovechen tecnologías emergentes para resolver desafíos operacionales críticos. Esta investigación aborda la problemática de la inexactitud en la determinación de dimensiones de paquetes en la industria de \textit{delivery}, factor que genera ineficiencias significativas en la planificación de rutas y utilización de capacidad vehicular. Mediante la convergencia de aplicaciones IoT, procesamiento de imágenes con inteligencia artificial y arquitecturas distribuidas en la nube, se propone una solución integral que mejora la precisión operacional y democratiza el acceso a tecnologías sofisticadas para empresas de diferentes escalas.
+
+% ------------------------------------------------------------------
+\section{Identificación temática y motivación personal}
+% ------------------------------------------------------------------
+
+\subsection{Área de especialización en telecomunicaciones}
+
+\subsubsection{Aplicaciones IoT (\textit{Internet of Things})}
+
+Las aplicaciones IoT constituyen un ecosistema tecnológico integral que integra inteligencia artificial, redes de comunicación y automatización para crear una infraestructura de conectividad ubicua entre objetos físicos y sistemas digitales \cite{Liu2013}. Se define como la implementación de una arquitectura de cinco capas interconectadas:
+
+\begin{table}[H]
+\centering
+\caption{Arquitectura IoT \cite{Zhou2022}.}
+\label{tab:arquitectura_iot}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Capa} & \textbf{Descripción} \\
+\midrule
+Percepción & Sensores y dispositivos de captura \\
+Red & Protocolos de comunicación y transmisión \\
+Middleware & Procesamiento y almacenamiento de datos \\
+Aplicación & Servicios e interfaces de usuario \\
+Negocio & Análisis y toma de decisiones \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Servicios de Telecomunicaciones para Logística}
+
+Los servicios de telecomunicaciones para logística se definen como el conjunto de tecnologías y protocolos de comunicación que operan principalmente en la capa de red del ecosistema IoT, actuando como puente crítico entre la percepción de datos y su procesamiento funcional. Estos servicios garantizan la transmisión eficiente y segura de información tanto estática como móvil durante todas las fases del proceso logístico \cite{Zhou2022}.
+
+\subsubsection{Convergencia Tecnológica}
+
+La tesis desarrollada en esta investigación representa la convergencia de múltiples disciplinas dentro de la ingeniería de telecomunicaciones:
+
+\begin{itemize}
+    \item \textbf{Arquitecturas Distribuidas en la Nube}: Para el procesamiento remoto y almacenamiento escalable
+    \item \textbf{Inteligencia Artificial}: Específicamente visión por computadora para el procesamiento automatizado de imágenes
+\end{itemize}
+
+Esta integración tecnológica permite abordar desafíos reales del sector logístico mediante soluciones que aprovechan las capacidades de procesamiento remoto, almacenamiento distribuido y comunicaciones continuas, características fundamentales de los sistemas modernos de telecomunicaciones en el contexto de la transformación digital.
+
+% ------------------------------------------------------------------
+\subsection{Relación con los estudios realizados}
+% ------------------------------------------------------------------
+
+La presente investigación se fundamenta en una progresión curricular especializada que abarca desde los fundamentos del desarrollo web hasta la implementación de soluciones IoT avanzadas, estableciendo una relación directa y sistemática con tres cursos clave que proporcionan las competencias técnicas necesarias.
+
+\subsubsection{TEL131 Ingeniería Web para Telecomunicaciones}
+
+Este curso proporciona la base tecnológica para desarrollar la capa de aplicación e interfaces de gestión en soluciones de logística inteligente. Se abordan fundamentos de programación, desarrollo web con conexión a bases de datos, y modelado relacional con SQL, aplicables en \textit{dashboards} para monitoreo en tiempo real, interfaces de control y manejo de datos IoT.
+
+\subsubsection{TEL137 Gestión de Servicios de TICs}
+
+Este curso se enfoca en la gestión de servicios dentro del ecosistema IoT, brindando competencias para desarrollar infraestructuras seguras, escalables y robustas. A través de \textit{frameworks} modernos y servicios web, se construyen sistemas capaces de optimizar rutas y asignar recursos inteligentemente.
+
+\subsubsection{1TEL05 Servicios y Aplicaciones para IoT}
+
+Este curso se centra en la construcción de la capa de aplicación IoT y su integración con la nube, facilitando el desarrollo de soluciones logísticas orientadas al usuario final. Se abordan competencias en aplicaciones móviles conectadas a servicios SaaS, útiles para rastreo de productos y alertas inteligentes.
+
+% ------------------------------------------------------------------
+\subsection{Motivación personal y experiencia profesional}
+% ------------------------------------------------------------------
+
+La motivación personal para abordar esta problemática combina una vocación por la automatización de procesos con un interés social en mejorar la eficiencia empresarial. La experiencia profesional durante la carrera, desde almacenero hasta asistente logístico, brindó una comprensión directa de los desafíos operacionales, destacando la importancia del cumplimiento de tiempos en cada etapa del proceso logístico.
+
+% ------------------------------------------------------------------
+\section{Descripción y características del problema}
+% ------------------------------------------------------------------
+
+\subsection{Contexto del problema en la industria de \textit{delivery}}
+
+La industria de servicios de \textit{delivery} y logística de última milla ha experimentado un crecimiento exponencial en los últimos años, impulsada por el auge del comercio electrónico y los cambios en los hábitos de consumo de la población \cite{RedacciponTLW2025}. 
+
+\begin{table}[H]
+\centering
+\caption{Proyecciones del Mercado de delivery en Perú.}
+\label{tab:proyecciones_delivery}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Año} & \textbf{Crecimiento (\%)} & \textbf{Ingresos (millones USD)} \\
+\midrule
+2024 & --- & 2,500 \\
+2029 & 11.03 & 2,951 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Uno de los principales desafíos que enfrentan las empresas de \textit{delivery} es obtener información precisa sobre las dimensiones y características de los paquetes que deben recoger y entregar.
+
+\subsection{Desafío técnico desde la perspectiva de telecomunicaciones}
+
+Desde la perspectiva de la ingeniería de telecomunicaciones, el problema central radica en la necesidad de desarrollar un sistema distribuido que permita el procesamiento automatizado de imágenes capturadas por dispositivos móviles para la determinación precisa de dimensiones de paquetes.
+
+\subsection{Características específicas del problema}
+
+El problema presenta características específicas que lo hacen particularmente complejo desde el punto de vista técnico y operacional:
+
+\begin{itemize}
+    \item Gran variabilidad en dimensiones, formas y características físicas de los paquetes
+    \item Limitación de capacidad de los motorizados
+    \item Necesidad de confiabilidad en los procesos de verificación
+    \item Requisito de escalabilidad del sistema
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section{Importancia del problema y su solución}
+% ------------------------------------------------------------------
+
+\subsection{Perspectiva técnica}
+
+Resolver este problema es clave por el uso de tecnologías emergentes que transforman telecomunicaciones y computación distribuida. El procesamiento en la nube ha madurado para realizar análisis complejos de imágenes sin necesidad de ejecución local en dispositivos \cite{Xu2012,Wang2012}.
+
+\subsection{Perspectiva económica y financiera}
+
+La automatización en medición de paquetes mejora rentabilidad y competitividad logística, generando ahorros significativos y optimizando recursos de transporte \cite{Krysiska2024}.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{gastos_tecnologia.png}
+    \caption{Gasto en tecnologías de la información - América Latina.}
+    \label{fig:gastos_tecnologia}
+\end{figure}
+
+\subsection{Perspectiva social y cultural}
+
+Socialmente, la solución mejora la calidad de vida de trabajadores logísticos y usuarios finales. La automatización de tareas repetitivas permite enfocar recursos humanos en actividades de mayor valor, mejorando satisfacción laboral y desarrollo profesional.
+
+\subsection{Perspectiva ambiental y de sostenibilidad}
+
+Abordar este problema es clave para reducir emisiones de gases de efecto invernadero y usar recursos energéticos eficientemente. La optimización de rutas, basada en medidas precisas de paquetes, permite planificar trayectos más cortos, disminuyendo consumo de combustible y emisiones de CO₂.
+
+\subsection{Perspectiva legal y reglamentaria}
+
+En Perú, la medición automatizada de paquetes con IoT debe cumplir la Ley N.º 29733, que exige consentimiento previo, finalidad clara, calidad y seguridad en el tratamiento de datos \cite{EditoraPer2973}.
+
+\subsection{Perspectiva ética}
+
+La automatización plantea dilemas éticos sobre responsabilidad social, equidad digital, sostenibilidad ambiental, privacidad de datos y rendición de cuentas. Esta visión ética integral asegura que la tecnología respete valores humanos y apoye un desarrollo sostenible.
+
+% ------------------------------------------------------------------
+\section{Impactos previstos y beneficiarios}
+% ------------------------------------------------------------------
+
+\subsection{Impactos operacionales}
+
+La implementación tendrá impactos operacionales significativos, mejorando la eficiencia mediante tecnologías IoT, IA y visión artificial \cite{RedaccinTLW2024,Alharbi2023}.
+
+\subsubsection{Reducción de tiempos de procesamiento}
+
+La medición automatizada elimina procesos manuales, reduciendo el tiempo requerido para registrar, verificar y procesar solicitudes \cite{Xu2012}.
+
+\subsubsection{Optimización de rutas de entrega}
+
+Con datos precisos sobre dimensiones, los sistemas pueden planificar rutas más eficientes considerando capacidad de carga, tiempo y distancia.
+
+\subsection{Impactos tecnológicos}
+
+La implementación tendrá un impacto tecnológico significativo en telecomunicaciones e IoT, estableciendo nuevos paradigmas en procesamiento de imágenes para logística.
+
+\subsection{Impactos económicos}
+
+Los impactos económicos se reflejan desde la productividad individual hasta la competitividad sectorial, aprovechando procesamiento de imágenes con IA en la nube para optimizar entregas urbanas.
+
+\subsection{Beneficiarios directos}
+
+\subsubsection{Empresas de \textit{delivery} y logística}
+
+Son los principales beneficiarios, mejorando eficiencia y rentabilidad gracias al procesamiento de imágenes con IA en la nube.
+
+\subsubsection{Motorizados y personal operativo}
+
+Mejoran productividad y condiciones laborales mediante rutas optimizadas que permiten más entregas en menos tiempo.
+
+\subsubsection{Clientes emisores de paquetes}
+
+Experimentan mayor fiabilidad y transparencia con rutas inteligentes que optimizan entregas y recojo.
+
+\subsubsection{Destinatarios de entregas}
+
+Reciben un servicio más rápido y predecible, cumpliendo estándares de \textit{quick commerce} en menos de 90 minutos.
+
+\subsection{Beneficiarios indirectos}
+
+\subsubsection{Sector de Telecomunicaciones}
+
+Este sector verá un aumento en la demanda de servicios especializados y mejoras en infraestructura.
+
+\subsubsection{Industria de Desarrollo de Software}
+
+Se generarán nuevas oportunidades y mayor demanda de talento especializado en aplicaciones móviles, NoSQL y microservicios.
+
+\subsubsection{Medio Ambiente y Sociedad}
+
+La optimización de rutas reducirá emisiones de CO₂ y consumo de combustible, contribuyendo a un entorno urbano más saludable.
+
+\subsubsection{Ecosistema de Innovación Tecnológica}
+
+La solución fortalecerá la innovación al demostrar cómo tecnologías emergentes resuelven problemas reales.
