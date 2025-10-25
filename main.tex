@@ -68,6 +68,26 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+% Definir lenguaje JSON para listings
+\lstdefinelanguage{json}{
+    basicstyle=\small\ttfamily,
+    numbers=left,
+    numberstyle=\tiny\color{codegray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{backcolour},
+    string=[s]{"}{"},
+    stringstyle=\color{codepurple},
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{codegreen},
+    morestring=[b]',
+    morestring=[b]"
+}
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -95,18 +115,48 @@
 
 % Formato de capítulos
 \usepackage{titlesec}
-\titleformat{\chapter}[display]
-{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+\usepackage{titlesec}
 
+% Solo modifica el índice, no los títulos
+\usepackage{titletoc}
+\titlecontents{chapter}
+  [0em]                           % margen izquierdo
+  {\bfseries}                     % formato
+  {Capítulo \thecontentslabel. }  % antes del título
+  {}                              % sin número
+  {\titlerule*[1pc]{.}\contentspage}  % puntos y número de página
+
+% Capítulos: tamaño 14pt
+\titleformat{\chapter}[hang]
+{\normalfont\fontsize{14}{16}\bfseries\selectfont}{\chaptertitlename\ \thechapter.}{1em}{}
+
+\titlespacing*{\chapter}{0pt}{0.35\textheight}{40pt}
+
+% Capítulos sin número (Introducción, Conclusiones): tamaño 14pt
+\titleformat{name=\chapter,numberless}[hang]
+{\normalfont\fontsize{14}{16}\bfseries\selectfont}{}{0pt}{}
+
+\titlespacing*{name=\chapter,numberless}{0pt}{0.35\textheight}{40pt}
+
+% Comando especial para páginas sin espacio arriba
+\newcommand{\chapternospacetop}[1]{%
+  \begingroup
+  \titlespacing*{name=\chapter,numberless}{0pt}{0pt}{20pt}%
+  \chapter*{#1}%
+  \endgroup
+}
+
+% Secciones (1.1, 1.2): tamaño 13pt
 \titleformat{\section}
-{\normalfont\Large\bfseries}{\thesection}{1em}{}
+{\normalfont\fontsize{13}{15}\bfseries\selectfont}{\thesection}{1em}{}
 
+% Subsecciones (1.1.1, 1.1.2): tamaño 12pt
 \titleformat{\subsection}
-{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+{\normalfont\fontsize{12}{14}\bfseries\selectfont}{\thesubsection}{1em}{}
 
+% Subsubsecciones (1.1.1.1): tamaño 12pt
 \titleformat{\subsubsection}
-{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+{\normalfont\fontsize{12}{14}\bfseries\selectfont}{\thesubsubsection}{1em}{}
 
 % Referencias cruzadas
 \usepackage{cleveref}
@@ -140,18 +190,19 @@
 
 % Idioma
 \addto\captionsspanish{
-    \renewcommand{\listtablename}{Índice de Tablas}
-    \renewcommand{\listfigurename}{Índice de Figuras}
+    \renewcommand{\listtablename}{ÍNDICE DE TABLAS}
+    \renewcommand{\listfigurename}{ÍNICE DE FIGURAS}
     \renewcommand{\tablename}{Tabla}
     \renewcommand{\figurename}{Figura}
+    \renewcommand{\contentsname}{ÍNDICE}
 }
 
 
 % INFORMACIÓN DEL DOCUMENTO
 
-\title{Diseño e Implementación de una Plataforma Web y Aplicación Móvil con Procesamiento de Imágenes con Inteligencia Artificial Multimodal en la Nube para la Identificación de Pagos, Estimación de Dimensiones y Optimización Logística en Servicios de Delivery Urbano en Lima}
+\title{Diseño e implementación de una plataforma web-móvil para gestión logística en PyMEs con medición automática de dimensiones de paquetes mediante inteligencia artificial}
 \author{Juan Alfonso Chapoñan Espinoza}
-\date{Lima, junio, 2025}
+\date{Lima, agosto, 2025}
 
 
 % INICIO DEL DOCUMENTO
@@ -159,34 +210,44 @@
 \begin{document}
 
 % ------------------------------------------------------------------
-% PÁGINAS PRELIMINARES
+% PÁGINAS PRELIMINARES SIN NUMERACIÓN (no se cuentan)
 % ------------------------------------------------------------------
-\frontmatter  
+\pagenumbering{gobble}  % Desactiva completamente la numeración
 
 \input{portada.tex}
 \cleardoublepage
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{20pt}
 
 \input{informe_similitud.tex}
 \cleardoublepage
 
-% TODO: Descomentar cuando completes estos archivos
-% \input{dedicatoria.tex}
-% \cleardoublepage
+% ------------------------------------------------------------------
+% INICIA NUMERACIÓN ROMANA DESDE i
+% ------------------------------------------------------------------
+\frontmatter
+\pagestyle{plain}  % Activa numeración romana
 
-% \input{agradecimientos.tex}
-% \cleardoublepage
-
-% \input{resumen.tex}
-% \cleardoublepage
-
-\tableofcontents
+\input{resumen.tex}
 \cleardoublepage
 
-% \listoftables
-% \cleardoublepage
+\input{dedicatoria.tex}
+\cleardoublepage
 
-% \listoffigures
-% \cleardoublepage
+\input{agradecimientos.tex}
+\cleardoublepage
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}
+\cleardoublepage
+
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
+\cleardoublepage
+
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+
+\cleardoublepage
 
 \input{glosario.tex}
 \cleardoublepage
@@ -200,12 +261,14 @@
 \input{capitulos/01_presentacion_problema.tex}
 \input{capitulos/02_estado_arte.tex}
 
-\input{capitulos/03_metodologia.tex}
+\input{capitulos/03_diseno_solucion.tex}
 % \input{capitulos/04_resultados.tex}
 
 % ------------------------------------------------------------------
 % CONCLUSIONES
 % ------------------------------------------------------------------
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{20pt}
+
 \input{conclusiones.tex}
 % \input{recomendaciones.tex}
 
@@ -213,13 +276,14 @@
 % BIBLIOGRAFÍA
 % ------------------------------------------------------------------
 \cleardoublepage
-\printbibliography[title={Referencias Bibliográficas}]
-\addcontentsline{toc}{chapter}{Referencias Bibliográficas}
+\printbibliography[title={REFERENCIAS BIBLIOGRAFICAS}]
+\addcontentsline{toc}{chapter}{REFERENCIAS BIBLIOGRAFICAS}
 
 % ------------------------------------------------------------------
 % ANEXOS
 % ------------------------------------------------------------------
-% \appendix
-% \input{apendices/anexos.tex}
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+\appendix
+\input{apendices/anexos.tex}
 
 \end{document}

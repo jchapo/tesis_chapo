@@ -1,1 +1,618 @@
-[Por completar]
+% cSpell:language es,en
+% ==================================================================
+% ANEXOS DEL CAPÍTULO 3
+% ==================================================================
+
+\appendix
+
+% ------------------------------------------------------------------
+\chapter{Caracterización detallada de actores del sistema}
+\label{anexo:actores}
+
+% ------------------------------------------------------------------
+
+\section*{Actor: Clientes (Emisores)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Rol en el sistema} & Usuarios que solicitan el servicio de envío de paquetes \\
+\hline
+\textbf{Necesidades principales} & Necesitan enviar paquetes de manera rápida y confiable sin invertir tiempo en mediciones manuales. Requieren conocer el estado de sus pedidos en tiempo real y tener transparencia en los costos del servicio. \\
+\hline
+\textbf{Puntos de dolor actuales} & Actualmente deben medir manualmente los paquetes o proporcionar estimaciones que pueden no corresponder con la realidad. Experimentan falta de trazabilidad durante la entrega y sufren reprogramaciones cuando los paquetes están mal estimados, generando incertidumbre sobre las condiciones del servicio. \\
+\hline
+\end{tabular}
+\end{table}
+
+\section*{Actor: Administradores}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Rol en el sistema} & Gestores de la operación logística de la empresa \\
+\hline
+\textbf{Necesidades principales} & Buscan maximizar la eficiencia operativa atendiendo el mayor número de pedidos posible. Necesitan asignar pedidos adecuadamente a motorizados, supervisar entregas en tiempo real y poder rechazar pedidos que excedan la capacidad operativa del servicio. \\
+\hline
+\textbf{Puntos de dolor actuales} & Enfrentan una gestión manual de pedidos mediante WhatsApp y hojas de Excel que no escala. Carecen de visibilidad en tiempo real de la operación y tienen dificultad para validar las dimensiones reportadas por los clientes, lo que genera pérdida de eficiencia por aceptar paquetes sobredimensionados. \\
+\hline
+\end{tabular}
+\end{table}
+
+\section*{Actor: Motorizados (Repartidores)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Rol en el sistema} & Operadores de campo que recogen y entregan paquetes \\
+\hline
+\textbf{Necesidades principales} & Requieren recibir información clara sobre los pedidos asignados para optimizar el espacio en su mochila o cajas de reparto. Necesitan conocer rutas y ubicaciones con precisión, registrar evidencias de recojo y entrega fácilmente, y evitar viajes innecesarios por paquetes que no pueden transportar. \\
+\hline
+\textbf{Puntos de dolor actuales} & Experimentan sorpresas frecuentes con paquetes más grandes de lo reportado, lo que genera pérdida de tiempo y combustible en recojos no viables. Carecen de herramientas adecuadas para comunicar el estado del pedido en tiempo real y enfrentan dificultad para gestionar múltiples entregas simultáneas de manera eficiente. \\
+\hline
+\end{tabular}
+\end{table}
+
+\section*{Actor: Destinatarios (Receptores)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Rol en el sistema} & Usuarios finales que reciben los paquetes \\
+\hline
+\textbf{Necesidades principales} & Esperan recibir sus paquetes en el tiempo estimado y conocer cuándo llegará el motorizado. Necesitan tener confianza en el servicio y sentirse informados durante el proceso de entrega. \\
+\hline
+\textbf{Puntos de dolor actuales} & Sufren reprogramaciones frecuentes debido a problemas logísticos en la cadena de entrega. Experimentan falta de información sobre el estado real de su pedido y quedan insatisfechos cuando el servicio se retrasa sin explicación clara. \\
+\hline
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------------
+\chapter{Síntesis de hallazgos de la fase de empatía}
+\label{anexo:hallazgos}
+% ------------------------------------------------------------------
+
+\section{Necesidades identificadas}
+
+\begin{itemize}
+    \item \textbf{Automatización de procesos manuales}: La medición de dimensiones de paquetes consume tiempo y genera estimaciones inexactas, mientras que la gestión de pedidos mediante WhatsApp y hojas de cálculo resulta ineficiente para escalar operaciones.
+    
+    \item \textbf{Visibilidad y trazabilidad en tiempo real}: Clientes requieren conocer el estado de sus envíos, administradores necesitan supervisar la operación completa, y motorizados demandan información clara sobre asignaciones y rutas.
+    
+    \item \textbf{Optimización de recursos limitados}: Las empresas necesitan soluciones de bajo costo con modelos de pago progresivos, y los motorizados requieren maximizar el aprovechamiento del espacio de transporte para cumplir múltiples entregas eficientemente.
+\end{itemize}
+
+\section{Restricciones del contexto}
+
+\begin{itemize}
+    \item \textbf{Restricción económica}: Presupuestos limitados para inversión tecnológica inicial y necesidad de evitar costos fijos elevados que comprometan la viabilidad del negocio.
+    
+    \item \textbf{Restricción técnica}: El uso predominante de dispositivos Android de gama media a baja condiciona las decisiones de diseño hacia arquitecturas que minimicen el procesamiento local. Se implementan estrategias básicas de eficiencia (compresión de imágenes, procesamiento en cloud, uso de SDKs nativos).
+    
+    \item \textbf{Restricción operativa}: Conectividad variable en diferentes zonas de Lima que requiere estrategias de sincronización y manejo de estados offline para garantizar continuidad del servicio.
+    
+    \item \textbf{Restricción normativa}: Cumplimiento obligatorio de la Ley N.º 29733 de Protección de Datos Personales en el manejo de ubicaciones, fotografías de evidencia y datos personales de usuarios.
+\end{itemize}
+
+\section{Oportunidades de mejora mediante tecnología}
+
+\begin{itemize}
+    \item \textbf{Inteligencia artificial para visión por computadora}: Automatización de estimación de dimensiones mediante fotografías con objetos de referencia, eliminando tiempo de medición manual y reduciendo errores humanos.
+    
+    \item \textbf{Infraestructura cloud escalable (Firebase)}: Sincronización en tiempo real entre dispositivos móviles y dashboard web sin requerir servidores físicos costosos, proporcionando trazabilidad completa de operaciones.
+    
+    \item \textbf{Notificaciones push (Firebase Cloud Messaging)}: Comunicación instantánea de cambios de estado a todos los actores, mejorando coordinación operativa y experiencia de usuario.
+    
+    \item \textbf{Geolocalización (Google Maps API)}: Optimización de rutas de entrega y seguimiento en tiempo real de motorizados, aumentando eficiencia del servicio y reduciendo tiempos de entrega.
+    
+    \item \textbf{Modelo de costos por uso}: Servicios cloud con pago progresional que se alinea con el crecimiento de empresas pequeñas, eliminando barreras de entrada por inversiones iniciales prohibitivas.
+\end{itemize}
+
+% ------------------------------------------------------------------
+\chapter{Matriz de trazabilidad completa}
+\label{anexo:trazabilidad}
+% ------------------------------------------------------------------
+
+\begin{longtable}{|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{5.5cm}|}
+\caption{Matriz de trazabilidad: Necesidades vs. Requerimientos.} \\
+\hline
+\textbf{Necesidad identificada} & \textbf{Req. funcionales} & \textbf{Req. no funcionales} & \textbf{Justificación técnica} \\
+\hline
+\endfirsthead
+
+\multicolumn{4}{c}{\textit{Continuación de la tabla}} \\
+\hline
+\textbf{Necesidad identificada} & \textbf{Req. funcionales} & \textbf{Req. no funcionales} & \textbf{Justificación técnica} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+Automatización de medición de dimensiones & RF2.3, RF2.4 & RNF1.1, RNF6.2, RNF7.1, RNF7.2 & El módulo de IA con Cloud Functions procesa imágenes automáticamente, reduciendo tiempo de medición manual y errores humanos, con compresión optimizada para minimizar consumo de datos. \\
+\hline
+
+Trazabilidad en tiempo real de pedidos & RF2.1, RF2.5, RF3.4, RF4.1, RF5.1, RF5.2 & RNF1.2, RNF2.1 & La sincronización en tiempo real de Firestore combinada con notificaciones push proporciona visibilidad completa del estado de pedidos a todos los actores. \\
+\hline
+
+Gestión centralizada para administradores & RF4.1, RF4.2, RF4.3 & RNF1.2, RNF4.2, RNF5.1 & El dashboard web con React permite supervisión completa, filtrado eficiente y visualización geográfica de operaciones desde cualquier navegador. \\
+\hline
+
+Herramientas operativas para motorizados & RF3.1, RF3.2, RF3.3, RF3.5 & RNF4.1, RNF5.1, RNF6.1 & La aplicación Android nativa optimizada proporciona acceso eficiente a funciones del dispositivo (cámara, GPS) con bajo consumo de batería. \\
+\hline
+
+Solución de bajo costo escalable & RF1.1, RF6.1, RF6.2 & RNF2.1, RNF3.1, RNF9.1, RNF9.2 & La arquitectura serverless de Firebase elimina costos de servidores físicos y escala automáticamente con modelo de pago por uso. \\
+\hline
+
+Seguridad de información sensible & RF6.1, RF6.2 & RNF3.1, RNF3.2, RNF3.3, RNF7.1-RNF7.5 & Firebase Auth, reglas de seguridad de Firestore, cifrado SSL/TLS y cumplimiento de Ley N.º 29733 protegen datos personales y operativos. \\
+\hline
+
+Optimización de espacio de transporte & RF2.3, RF2.4, RF3.5 & RNF6.1 & Las dimensiones precisas permiten a motorizados planificar mejor la capacidad de carga y a administradores asignar pedidos compatibles. \\
+\hline
+
+Compatibilidad con dispositivos limitados & RF3.1, RF3.2, RF3.3 & RNF4.1, RNF9.1, RNF9.2 & El diseño considera dispositivos Android de gama media-baja, optimizando procesamiento, memoria y consumo de batería. \\
+\hline
+
+\end{longtable}
+
+% ------------------------------------------------------------------
+\chapter{Modelo de datos detallado}
+\label{anexo:modelo-datos}
+% ------------------------------------------------------------------
+
+\section{Colección: USUARIOS}
+
+\textbf{Ruta:} \texttt{usuarios/\{uid\}}
+
+\begin{lstlisting}[language=json,caption={Estructura de documento Usuario}]
+{
+  uid: string,              // ID unico de Firebase Auth
+  email: string,            // Correo electronico
+  phone: string,            // Telefono de contacto
+  nombre: string,           // Nombre del usuario
+  apellido: string,         // Apellido del usuario
+  rol: string,              // 'administrador' | 'cliente' | 'motorizado'
+  
+  // Datos especificos para clientes empresariales (opcional)
+  datosEmpresariales: {
+    nombreEmpresa: string,
+    ruc: string,
+    razonSocial: string
+  } | null,
+  
+  // Datos especificos para motorizados (opcional)
+  datosMotorizado: {
+    estadoServicio: string, // 'disponible' | 'ocupado' | 'desconectado'
+    vehiculo: {
+      placa: string,
+      tipo: string,         // 'motocicleta' | 'bicicleta' | 'auto'
+      modelo: string,
+      anio: number
+    },
+    estadisticas: {
+      pedidosCompletados: number,
+      calificacionPromedio: number,
+      tiempoPromedioEntrega: number  // en minutos
+    }
+  } | null,
+  
+  // Ultima ubicacion conocida (para motorizados)
+  ultimaUbicacionConocida: {
+    latitud: number,
+    longitud: number,
+    timestamp: timestamp,
+    distrito: string
+  } | null,
+  
+  // Metadatos
+  creadoEn: timestamp,
+  actualizadoEn: timestamp,
+  activo: boolean,
+  ultimaConexion: timestamp
+}
+\end{lstlisting}
+
+\section{Colección: PEDIDOS}
+
+\textbf{Ruta:} \texttt{pedidos/\{pedidoId\}}
+
+\begin{lstlisting}[language=json,caption={Estructura de documento Pedido (parte 1)}]
+{
+  id: string,  // ID unico del pedido
+  
+  // Estructura de asignacion (recojo y entrega pueden ser diferentes)
+  asignacion: {
+    recojo: {
+      estado: string,       // 'pendiente' | 'asignado' | 'completado'
+      rutaId: string | null,
+      rutaNombre: string | null,
+      motorizadoUid: string | null,
+      motorizadoNombre: string | null,
+      asignadaEn: timestamp | null,
+      razonPendiente: string | null
+    },
+    entrega: {
+      // Estructura similar a recojo
+    }
+  },
+  
+  // Control de visibilidad por rol
+  visibilidad: {
+    motorizadoRecojo: boolean,
+    motorizadoEntrega: boolean,
+    administrador: boolean
+  },
+  
+  // Ciclo operativo del pedido
+  cicloOperativo: {
+    diaCreacion: string,    // YYYY-MM-DD
+    diaAsignado: string,
+    cerradoPorAdmin: boolean,
+    fechaCierreAdmin: timestamp | null,
+    horaLimiteRecojo: timestamp,
+    permiteEntregaAntes13h: boolean
+  },
+  
+  // Indices para consultas eficientes
+  indices: {
+    requiereAsignacionManual: boolean,
+    motorizadoRecojoUid: string | null,
+    motorizadoEntregaUid: string | null,
+    rutaRecojoId: string | null,
+    rutaEntregaId: string | null,
+    distritoRecojo: string,
+    distritoEntrega: string
+  }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=json,caption={Estructura de documento Pedido (parte 2)}]
+{
+  // Informacion del proveedor (quien envia)
+  proveedor: {
+    uid: string,
+    nombre: string,
+    correo: string,
+    telefono: string,
+    direccion: {
+      link: string,         // URL de Google Maps
+      distrito: string,
+      coordenadas: {
+        latitud: number,
+        longitud: number
+      }
+    }
+  },
+  
+  // Informacion del destinatario (quien recibe)
+  destinatario: {
+    nombre: string,
+    telefono: string,
+    direccion: {
+      link: string,
+      distrito: string,
+      coordenadas: {
+        latitud: number,
+        longitud: number
+      }
+    }
+  },
+  
+  // Informacion del paquete
+  paquete: {
+    detalle: string,        // Descripcion del contenido
+    observaciones: string,
+    dimensiones: {
+      alto: number,         // en centimetros
+      ancho: number,
+      largo: number,
+      volumen: number,      // calculado automaticamente
+      peso: number | null,  // opcional
+      estimadoPorIA: boolean,
+      editadoManualmente: boolean,
+      excedeMaximo: boolean,
+      confianzaIA: number | null  // 0-1, nivel de confianza del modelo
+    },
+    fotos: {
+      recojo: {
+        url: string,
+        thumbnail: string,
+        timestamp: timestamp,
+        procesadaPorIA: boolean
+      },
+      entrega: {
+        url: string,
+        thumbnail: string,
+        timestamp: timestamp
+      },
+      comprobantePago: {
+        url: string,
+        thumbnail: string,
+        timestamp: timestamp
+      }
+    }
+  }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=json,caption={Estructura de documento Pedido (parte 3)}]
+{
+  // Informacion de pago
+  pago: {
+    seCobra: boolean,
+    metodoPago: string,     // 'efectivo' | 'transferencia' | 'yape' | 'plin'
+    monto: number,
+    comision: number,
+    montoTotal: number,
+    estadoPago: string,     // 'pendiente' | 'pagado' | 'por_cobrar'
+    billeteraUsada: {
+      id: string,
+      propietarioTipo: string,  // 'proveedor' | 'empresa'
+      metodo: string,
+      titular: string
+    }
+  },
+  
+  // Informacion del motorizado asignado (desnormalizado)
+  motorizado: {
+    uid: string,
+    nombre: string,
+    asignadoEn: timestamp,
+    aceptadoEn: timestamp | null
+  } | null,
+  
+  // Fechas del ciclo de vida del pedido
+  fechas: {
+    creacion: timestamp,
+    entregaProgramada: timestamp,
+    recojo: timestamp | null,
+    entrega: timestamp | null,
+    anulacion: timestamp | null
+  },
+  
+  // Control de version para actualizaciones concurrentes
+  actualizadoEn: timestamp,
+  version: number
+}
+\end{lstlisting}
+
+\section{Colección: BILLETERAS}
+
+\textbf{Ruta:} \texttt{billeteras/\{billeteraId\}}
+
+\begin{lstlisting}[language=json,caption={Estructura de documento Billetera}]
+{
+  id: string,
+  propietario: {
+    tipo: string,           // 'proveedor' | 'empresa'
+    uid: string | null,     // Si es proveedor, referencia a usuario
+    nombreEmpresa: string
+  },
+  alias: string,            // Nombre descriptivo
+  metodo: string,           // 'yape' | 'plin' | 'transferencia_bancaria'
+  cuenta: {
+    titular: string,
+    telefono: string,       // Para Yape/Plin
+    numeroDocumento: string | null,  // DNI/RUC
+    tipoDocumento: string | null     // 'DNI' | 'RUC'
+  },
+  qr: {
+    urlImagen: string,      // URL de Firebase Storage
+    urlImagenThumbnail: string | null,
+    hash: string | null     // Para validacion
+  },
+  config: {
+    activo: boolean,
+    porDefecto: boolean,
+    soloEfectivo: boolean,
+    limiteMaximo: number | null,
+    comisionPorcentaje: number,
+    prioridad: number       // Para ordenar opciones
+  },
+  verificado: boolean,
+  verificadoPor: {
+    uid: string,
+    nombre: string,
+    fecha: timestamp
+  },
+  creadoEn: timestamp,
+  actualizadoEn: timestamp,
+  ultimoUso: timestamp | null,
+  totalTransacciones: number
+}
+\end{lstlisting}
+
+\subsection{Índices compuestos necesarios}
+
+\begin{itemize}
+    \item \texttt{proveedor.uid + fechas.creacion} (pedidos por cliente)
+    \item \texttt{motorizado.uid + fechas.creacion} (pedidos por motorizado)
+    \item \texttt{asignacion.recojo.estado + cicloOperativo.diaCreacion} (pedidos pendientes del día)
+    \item \texttt{indices.distritoEntrega + fechas.entregaProgramada} (optimización de rutas)
+\end{itemize}
+
+% ------------------------------------------------------------------
+\chapter{Configuración de seguridad y autenticación}
+\label{anexo:seguridad}
+% ------------------------------------------------------------------
+
+\section{Estructura de custom claims}
+
+\begin{lstlisting}[language=json,caption={Custom claims en Firebase Authentication}]
+{
+  rol: 'administrador' | 'cliente' | 'motorizado',
+  permisos: ['crear_pedido', 'asignar_motorizado', 'ver_dashboard'],
+  empresaId: string | null  // Para clientes empresariales
+}
+\end{lstlisting}
+
+\section{Reglas de seguridad de Firestore}
+
+\begin{lstlisting}[caption={Firestore Security Rules}]
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Funcion helper para verificar autenticacion
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Funcion helper para verificar rol
+    function hasRole(role) {
+      return isAuthenticated() && 
+             request.auth.token.rol == role;
+    }
+    
+    // Usuarios: pueden leer/actualizar su propio perfil
+    match /usuarios/{userId} {
+      allow read: if isAuthenticated() && 
+                     (request.auth.uid == userId || 
+                      hasRole('administrador'));
+      allow write: if isAuthenticated() && 
+                      request.auth.uid == userId;
+      allow create: if hasRole('administrador');
+    }
+    
+    // Pedidos: acceso segun rol
+    match /pedidos/{pedidoId} {
+      allow read: if isAuthenticated() && (
+        hasRole('administrador') ||
+        (hasRole('cliente') && 
+         resource.data.proveedor.uid == request.auth.uid) ||
+        (hasRole('motorizado') && 
+         resource.data.motorizado.uid == request.auth.uid)
+      );
+      
+      allow create: if isAuthenticated() && 
+                       (hasRole('administrador') || 
+                        hasRole('cliente'));
+      
+      allow update: if isAuthenticated() && (
+        hasRole('administrador') ||
+        (hasRole('motorizado') && 
+         resource.data.motorizado.uid == request.auth.uid)
+      );
+      
+      allow delete: if hasRole('administrador');
+    }
+    
+    // Billeteras: solo administradores y propietarios
+    match /billeteras/{billeteraId} {
+      allow read: if isAuthenticated();
+      allow write: if hasRole('administrador') || 
+                      resource.data.propietario.uid == request.auth.uid;
+    }
+  }
+}
+\end{lstlisting}
+
+\section{Reglas de seguridad de Storage}
+
+\begin{lstlisting}[caption={Firebase Storage Security Rules}]
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function hasRole(role) {
+      return isAuthenticated() && 
+             request.auth.token.rol == role;
+    }
+    
+    // Imagenes de pedidos
+    match /pedidos/{pedidoId}/{tipo}/{filename} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && (
+        hasRole('administrador') ||
+        hasRole('cliente') ||
+        hasRole('motorizado')
+      );
+    }
+    
+    // Fotos de perfil
+    match /usuarios/{userId}/{filename} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && 
+                      request.auth.uid == userId;
+    }
+    
+    // QR de billeteras
+    match /billeteras/{billeteraId}/{filename} {
+      allow read: if isAuthenticated();
+      allow write: if hasRole('administrador');
+    }
+  }
+}
+\end{lstlisting}
+
+% ------------------------------------------------------------------
+\chapter{Justificación de puntuaciones en matriz multicriterio}
+\label{anexo:justificacion-puntuaciones}
+% ------------------------------------------------------------------
+
+\section{Escalabilidad}
+
+\begin{itemize}
+    \item \textbf{Firebase (5)}: Escalamiento automático sin configuración, maneja desde 0 hasta millones de usuarios transparentemente.
+    
+    \item \textbf{AWS (4)}: Excelente escalabilidad pero requiere configuración de Auto Scaling y gestión de capacidad.
+    
+    \item \textbf{Backend propio (2)}: Requiere planificación manual y redimensionamiento de servidores.
+\end{itemize}
+
+\section{Costo}
+
+\begin{itemize}
+    \item \textbf{Firebase (5)}: Capa gratuita generosa, ideal para desarrollo de tesis y etapas iniciales de empresas pequeñas.
+    
+    \item \textbf{AWS (3)}: Capa gratuita limitada a 12 meses, costos variables pero competitivos.
+    
+    \item \textbf{Backend propio (3)}: Costos fijos predecibles pero presentes desde el inicio.
+\end{itemize}
+
+\section{Facilidad de integración}
+
+\begin{itemize}
+    \item \textbf{Firebase (5)}: Componentes nativamente integrados, SDKs optimizados, despliegue con un comando.
+    
+    \item \textbf{AWS (3)}: Requiere integrar múltiples servicios manualmente, configuración compleja.
+    
+    \item \textbf{Backend propio (2)}: Integración completamente manual de cada componente.
+\end{itemize}
+
+\section{Mantenimiento}
+
+\begin{itemize}
+    \item \textbf{Firebase (5)}: Gestión de infraestructura completamente delegada a Google.
+    
+    \item \textbf{AWS (3)}: Gestión parcial, requiere actualización de componentes y monitoreo.
+    
+    \item \textbf{Backend propio (2)}: Responsabilidad total del mantenimiento, actualizaciones de seguridad, backups.
+\end{itemize}
+
+\section{Rendimiento}
+
+\begin{itemize}
+    \item \textbf{Firebase (4)}: Excelente para operaciones en tiempo real, latencia baja en sincronización.
+    
+    \item \textbf{AWS (4)}: Rendimiento configurable según recursos asignados, muy bueno con optimización.
+    
+    \item \textbf{Backend propio (3)}: Depende del proveedor de hosting y configuración manual.
+\end{itemize}
+
+\section{Ecosistema y soporte}
+
+\begin{itemize}
+    \item \textbf{Firebase (5)}: Documentación excelente, amplia comunidad, tutoriales especializados.
+    
+    \item \textbf{AWS (5)}: Documentación exhaustiva, soporte empresarial, ecosistema maduro.
+    
+    \item \textbf{Backend propio (3)}: Depende de múltiples fuentes, documentación fragmentada.
+\end{itemize}
