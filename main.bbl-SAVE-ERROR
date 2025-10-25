@@ -1,0 +1,435 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Liu2013}{article}{}
+      \name{author}{2}{}{%
+        {{hash=801995d5ce194602bce3d0261a10cd92}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Gui\bibnamedelima Xi},
+           giveni={G\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
+        {{hash=781892a96e5b70a7e50631a64d9f3ce9}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Fagui},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{8d9236e9dda1d68a4364fde3c41dd575}
+      \strng{fullhash}{8d9236e9dda1d68a4364fde3c41dd575}
+      \strng{bibnamehash}{8d9236e9dda1d68a4364fde3c41dd575}
+      \strng{authorbibnamehash}{8d9236e9dda1d68a4364fde3c41dd575}
+      \strng{authornamehash}{8d9236e9dda1d68a4364fde3c41dd575}
+      \strng{authorfullhash}{8d9236e9dda1d68a4364fde3c41dd575}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, after analysis of the relationship between third-party logistics (TPL) and the flow of information, logistics, capital as well as business among the node enterprises in supply chain, we have proposed a two-hub information system model. TPL serves as the hub of logistics information in the whole supply chain while the core enterprises as a hub of business and capital flow information. The TPL whole supply chain logistics information system model based on the Internet of Things (IoT) is introduced. In this model, the information of business and capital flow among core enterprises works as the driving force of supply chain, and application of IoT technology such as RFID, sensor, mobile Internet, is integrated to upgrade existing logistics information system to become the nerve system of TPL as well as a logistics hub for all nodes in the whole supply chain enterprises.}
+      \field{isbn}{9781479902576}
+      \field{issn}{21601348}
+      \field{journaltitle}{Proceedings - International Conference on Machine Learning and Cybernetics}
+      \field{month}{7}
+      \field{title}{IoT-based TPL whole supply chain logistics information system model}
+      \field{volume}{4}
+      \field{year}{2013}
+      \field{pages}{1758\bibrangedash 1762}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICMLC.2013.6890882
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/6890882
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/6890882
+      \endverb
+      \keyw{Internet of Things (IoT),RFID,Third-party logistics (TPL),Whole supply chain}
+    \endentry
+    \entry{Zhou2022}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4e2a7cb3247df9b03fa5c77ff9f13e1c}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Electrical}%
+        {Electronics Engineers Inc.}%
+      }
+      \strng{namehash}{4e2a7cb3247df9b03fa5c77ff9f13e1c}
+      \strng{fullhash}{4e2a7cb3247df9b03fa5c77ff9f13e1c}
+      \strng{bibnamehash}{4e2a7cb3247df9b03fa5c77ff9f13e1c}
+      \strng{authorbibnamehash}{4e2a7cb3247df9b03fa5c77ff9f13e1c}
+      \strng{authornamehash}{4e2a7cb3247df9b03fa5c77ff9f13e1c}
+      \strng{authorfullhash}{4e2a7cb3247df9b03fa5c77ff9f13e1c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{IOT technology is a new science and technology which integrates intelligence, networking, automation and other technologies. At this stage, Internet of things technology has been widely used in all walks of life in China. Logistics industry is the first industry to adopt IOT technology and one of the industries with the greatest potential to adopt Internet of things technology. So this paper mainly analyzes the application and creativeness of computer IOT technology in logistics for reference.}
+      \field{isbn}{9781665493963}
+      \field{journaltitle}{2nd IEEE International Conference on Advanced Technologies in Intelligent Control, Environment, Computing and Communication Engineering, ICATIECE 2022}
+      \field{title}{Applications of Computer Internet of Things Technologies in Logistics}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.1109/ICATIECE56365.2022.10047270
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10047270
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10047270
+      \endverb
+      \keyw{application,computer,internet of things technology,logistics industry}
+    \endentry
+    \entry{RedacciponTLW2025}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6011012ac996922ce827d84cd6ff8c2e}{%
+           family={TLW},
+           familyi={T\bibinitperiod},
+           given={Redaccipon},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{6011012ac996922ce827d84cd6ff8c2e}
+      \strng{fullhash}{6011012ac996922ce827d84cd6ff8c2e}
+      \strng{bibnamehash}{6011012ac996922ce827d84cd6ff8c2e}
+      \strng{authorbibnamehash}{6011012ac996922ce827d84cd6ff8c2e}
+      \strng{authornamehash}{6011012ac996922ce827d84cd6ff8c2e}
+      \strng{authorfullhash}{6011012ac996922ce827d84cd6ff8c2e}
+      \field{extraname}{1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{Desafíos y soluciones en la distribución de última milla: ¿Cómo adaptarse al futuro?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://thelogisticsworld.com/logistica-y-distribucion/desafios-y-soluciones-en-la-distribucion-de-ultima-milla-en-entornos-urbanos/
+      \endverb
+      \verb{url}
+      \verb https://thelogisticsworld.com/logistica-y-distribucion/desafios-y-soluciones-en-la-distribucion-de-ultima-milla-en-entornos-urbanos/
+      \endverb
+    \endentry
+    \entry{Xu2012}{article}{}
+      \name{author}{3}{}{%
+        {{hash=7cbb038cdc55bda7429e191a69dd6bd8}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zhiqiang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=f8b184f25038df606c450112459a220f}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Jialiang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f99311d1bccabc3e58394d1cda6ccd98}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhiyong},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{ae17feaca35fc7dd178644fb58de1ac5}
+      \strng{fullhash}{ae17feaca35fc7dd178644fb58de1ac5}
+      \strng{bibnamehash}{ae17feaca35fc7dd178644fb58de1ac5}
+      \strng{authorbibnamehash}{ae17feaca35fc7dd178644fb58de1ac5}
+      \strng{authornamehash}{ae17feaca35fc7dd178644fb58de1ac5}
+      \strng{authorfullhash}{ae17feaca35fc7dd178644fb58de1ac5}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Modern logistics is represented by the supply chain management and service of enterprise production and transportation, while the combination of intelligent transportation technology and logistics management will conduce to significant improvement of logistics service. The objective of IoT-based Intelligent Logistics System is elaborated here. After introducing the intelligent model of such logistic system, its logistic framework is constructed, and the actualization and application of a RFID-based logistics tracking and management system targeting at manufacturing industry are designed. It highlights the key points for the systematic development of current logistics are put forward. © 2012 IEEE.}
+      \field{isbn}{9781467329453}
+      \field{issn}{2157362X}
+      \field{journaltitle}{IEEE International Conference on Industrial Engineering and Engineering Management}
+      \field{title}{Design and actualization of IoT-based intelligent logistics system}
+      \field{year}{2012}
+      \field{pages}{2245\bibrangedash 2248}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/IEEM.2012.6838146
+      \endverb
+      \keyw{Intelligent Logistics System,Internet of Things (IoT),logistics cloud,logistics decision-making}
+    \endentry
+    \entry{Wang2012}{article}{}
+      \name{author}{4}{}{%
+        {{hash=954273daeaa75802cdbc57070693f02b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xun},
+           giveni={X\bibinitperiod}}}%
+        {{hash=e63b0ee15ffd62c4ae3f47df44a5ad0f}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wenfeng},
+           giveni={W\bibinitperiod}}}%
+        {{hash=79755293770374cebac47ccb4fe46261}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Ye},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=16e27adac1b31563e17c86920f0c910e}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{d423dac04de99b7da8a7a3435f0ca56d}
+      \strng{fullhash}{d52f9bc7e96051e3c2e1ca70407210ac}
+      \strng{bibnamehash}{d52f9bc7e96051e3c2e1ca70407210ac}
+      \strng{authorbibnamehash}{d52f9bc7e96051e3c2e1ca70407210ac}
+      \strng{authornamehash}{d423dac04de99b7da8a7a3435f0ca56d}
+      \strng{authorfullhash}{d52f9bc7e96051e3c2e1ca70407210ac}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With the rapid development of China's network economy, the strong demand for the types and personalization of logistics services is increasing, thus they embody an evident trend of network and socialization. The integration of Internet of Things technology is exactly to meet this trend, therefore, a new intelligently networked logistics service mode called cloud logistics has been proposed under the environment of IoT in this paper, which can provide services on demand. We analyze the concept, operating principle and features of cloud logistics. Then, the cloud logistics-based One-stop Service Platform for logistics center has been put forward. Through a unified, centralized, intelligent management and operation of cloud logistics platform, we can provide the supply chain users with comprehensive, fast and efficient logistics services. In addition, on the basis of research on the one-stop service platform architecture, a platform instance is also presented. © 2012 IEEE.}
+      \field{isbn}{9781467312127}
+      \field{journaltitle}{Proceedings of the 2012 IEEE 16th International Conference on Computer Supported Cooperative Work in Design, CSCWD 2012}
+      \field{title}{Research on Cloud Logistics-based One-stop Service Platform for Logistics Center}
+      \field{year}{2012}
+      \field{pages}{558\bibrangedash 563}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/CSCWD.2012.6221873
+      \endverb
+      \keyw{Internet of Things,cloud logistics,logistics center,one-stop service,service mode,virtualization}
+    \endentry
+    \entry{Krysiska2024}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1bc7300170cb63371536c2b282a72b80}{%
+           family={Krysińska},
+           familyi={K\bibinitperiod},
+           given={Joanna},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{1bc7300170cb63371536c2b282a72b80}
+      \strng{fullhash}{1bc7300170cb63371536c2b282a72b80}
+      \strng{bibnamehash}{1bc7300170cb63371536c2b282a72b80}
+      \strng{authorbibnamehash}{1bc7300170cb63371536c2b282a72b80}
+      \strng{authornamehash}{1bc7300170cb63371536c2b282a72b80}
+      \strng{authorfullhash}{1bc7300170cb63371536c2b282a72b80}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cloud security}
+      \field{month}{8}
+      \field{title}{On-premise vs. cloud: definition \& differences | NordLayer}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://nordlayer.com/blog/on-premise-vs-cloud-differences/
+      \endverb
+      \verb{url}
+      \verb https://nordlayer.com/blog/on-premise-vs-cloud-differences/
+      \endverb
+    \endentry
+    \entry{EditoraPer2973}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6c39bf254ac785ed262efcfe15071f0a}{%
+           family={Perú},
+           familyi={P\bibinitperiod},
+           given={Editora},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c39bf254ac785ed262efcfe15071f0a}
+      \strng{fullhash}{6c39bf254ac785ed262efcfe15071f0a}
+      \strng{bibnamehash}{6c39bf254ac785ed262efcfe15071f0a}
+      \strng{authorbibnamehash}{6c39bf254ac785ed262efcfe15071f0a}
+      \strng{authornamehash}{6c39bf254ac785ed262efcfe15071f0a}
+      \strng{authorfullhash}{6c39bf254ac785ed262efcfe15071f0a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{REGLAMENTO DE LA LEY Nº 29733 LEY DE PROTECCIÓN DE DATOS PERSONALES}
+      \field{year}{2973}
+      \verb{urlraw}
+      \verb https://cdn.www.gob.pe/uploads/document/file/272360/Ley%20N%C2%BA%2029733.pdf.pdf?v=1618338779
+      \endverb
+      \verb{url}
+      \verb https://cdn.www.gob.pe/uploads/document/file/272360/Ley%20N%C2%BA%2029733.pdf.pdf?v=1618338779
+      \endverb
+    \endentry
+    \entry{RedaccinTLW2024}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6220ae322705ce20df36c56a2c40dd46}{%
+           family={TLW},
+           familyi={T\bibinitperiod},
+           given={Redacción},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{6220ae322705ce20df36c56a2c40dd46}
+      \strng{fullhash}{6220ae322705ce20df36c56a2c40dd46}
+      \strng{bibnamehash}{6220ae322705ce20df36c56a2c40dd46}
+      \strng{authorbibnamehash}{6220ae322705ce20df36c56a2c40dd46}
+      \strng{authornamehash}{6220ae322705ce20df36c56a2c40dd46}
+      \strng{authorfullhash}{6220ae322705ce20df36c56a2c40dd46}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{La tecnología IoT ayuda a las empresas logísticas de México y América Latina}
+      \field{month}{11}
+      \field{title}{Supervisión de seguridad en tiempo real en la cadena de suministro: Innovación con IoT}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://thelogisticsworld.com/tecnologia/el-uso-de-iot-para-la-supervision-de-seguridad-en-tiempo-real-en-la-cadena-de-suministro/
+      \endverb
+      \verb{url}
+      \verb https://thelogisticsworld.com/tecnologia/el-uso-de-iot-para-la-supervision-de-seguridad-en-tiempo-real-en-la-cadena-de-suministro/
+      \endverb
+    \endentry
+    \entry{Alharbi2023}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e9fa6bc6eed1cbe70e52fd40af842b5d}{%
+           family={Alharbi},
+           familyi={A\bibinitperiod},
+           given={Hatem\bibnamedelima A.},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Electrical}%
+        {Electronics Engineers Inc.}%
+      }
+      \strng{namehash}{e9fa6bc6eed1cbe70e52fd40af842b5d}
+      \strng{fullhash}{e9fa6bc6eed1cbe70e52fd40af842b5d}
+      \strng{bibnamehash}{e9fa6bc6eed1cbe70e52fd40af842b5d}
+      \strng{authorbibnamehash}{e9fa6bc6eed1cbe70e52fd40af842b5d}
+      \strng{authornamehash}{e9fa6bc6eed1cbe70e52fd40af842b5d}
+      \strng{authorfullhash}{e9fa6bc6eed1cbe70e52fd40af842b5d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Internet of Things (IoT) plays a vital role in delivering outstanding logistical services to release any obstacles for people and provide a good experience. IoT logistic solutions are great assets for multiple sectors in smart cities. These solutions including but not limited to inventory tracking and analytics, real-time fleet management, Predictive maintenance. However, the IoT applications for logistics operations is a challenging task, especially, when it aims to reduce energy consumption along with their environmental and economic impacts. Thus, there is a need to have a system that performs IoT applications for logistics operations in an efficient manner. In the light of this challenge, this paper investigates how IoT applications for logistics operations would be efficiently offloaded to minimize the energy consumption and network traffic in fog-cloud systems. Therefore, an energy-efficient approach is proposed to collect data from several sensors (e.g., monitor people locations, health conditions, etc.) and process them either in fog or cloud in a real-time manner. This approach will help in reducing the energy consumption and network traffic to process IoT applications for logistics operations efficiently. The results show that the proposed fog/cloud approach outperforms the traditional approach in terms of decreasing the total power consumption and the Internet network traffic by 55% and 50%, respectively.}
+      \field{isbn}{9798350320060}
+      \field{journaltitle}{2023 International Conference on Information Technology: Cybersecurity Challenges for Sustainable Cities, ICIT 2023 - Proceeding}
+      \field{title}{Green and Network-Aware Smart IoT Logistics Applications}
+      \field{year}{2023}
+      \field{pages}{441\bibrangedash 446}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICIT58056.2023.10225953
+      \endverb
+      \keyw{Cloud Computing,Energy Consumption,Energy-Efficiency,Fog Computing,IoT Applications,Logistics Operations,Logistics Services}
+    \endentry
+    \entry{Yu2024}{article}{}
+      \name{author}{8}{}{%
+        {{hash=e8483440c1fc661bf3957f50ffb0df1d}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Weihao},
+           giveni={W\bibinitperiod}}}%
+        {{hash=2d3579ec7df6d4114e1dcbc418a92dd1}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Zhengyuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=229579205f7962cf73029ed72bb3093b}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Linjie},
+           giveni={L\bibinitperiod}}}%
+        {{hash=b41fe9c6cc1e8e9f13e889d20e626c3c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jianfeng},
+           giveni={J\bibinitperiod}}}%
+        {{hash=68434cdeb7a3c089fd99baba0e0a4a3b}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=aaf82b828c51f08749f4d70b2a2f681a}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zicheng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=c6099353a059c45f68d1f48dac694cf8}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xinchao},
+           giveni={X\bibinitperiod}}}%
+        {{hash=998f2745dfb50f3e6cf8f035a17211f3}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Lijuan},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e74c2c7e893b8a8125892bbcd22c83a3}
+      \strng{fullhash}{11b39825e7716f43b00ea8f6449e68dc}
+      \strng{bibnamehash}{e74c2c7e893b8a8125892bbcd22c83a3}
+      \strng{authorbibnamehash}{e74c2c7e893b8a8125892bbcd22c83a3}
+      \strng{authornamehash}{e74c2c7e893b8a8125892bbcd22c83a3}
+      \strng{authorfullhash}{11b39825e7716f43b00ea8f6449e68dc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose MM-Vet 1 , an evaluation benchmark that examines large multimodal models (LMMs) on complicated multimodal tasks. Recent LMMs have shown various intriguing abilities, such as solving math problems written on the blackboard , reasoning about events and celebrities in news images, and explaining visual jokes. Rapid model advancements pose challenges to evaluation benchmark development. Problems include: (1) How to systematically structure and evaluate the complicated multimodal tasks; (2) How to design evaluation metrics that work well across question and answer types; and (3) How to give model insights beyond a simple performance ranking. To this end, we present MM-Vet, designed based on the insight that the intriguing ability to solve complicated tasks often stems from a generalist model being able to integrate different core vision-language (VL) capabilities. MM-Vet defines 6 core VL capabilities and examines the 16 integrations of interest derived from their combinations. For evaluation metrics, we propose an LLM-based evaluator for open-ended outputs. The evaluator enables the evaluation across different question types and answer styles, resulting in a unified scoring metric. We evaluate representative LMMs on MM-Vet, providing insights into the capabilities of different LMM system paradigms and model designs. Code and data are available at https:// github.com/yuweihao/MM-Vet, and the online evaluator at https://huggingface. co/spaces/whyu/MM-Vet_Evaluator.}
+      \field{title}{MM-Vet: Evaluating Large Multimodal Models for Integrated Capabilities}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://huggingface.
+      \endverb
+      \verb{url}
+      \verb https://huggingface.
+      \endverb
+    \endentry
+    \entry{Team2025}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a55b7d5d1274a0ed751da98de34bedbf}{%
+           family={Team},
+           familyi={T\bibinitperiod},
+           given={Gemini},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a55b7d5d1274a0ed751da98de34bedbf}
+      \strng{fullhash}{a55b7d5d1274a0ed751da98de34bedbf}
+      \strng{bibnamehash}{a55b7d5d1274a0ed751da98de34bedbf}
+      \strng{authorbibnamehash}{a55b7d5d1274a0ed751da98de34bedbf}
+      \strng{authornamehash}{a55b7d5d1274a0ed751da98de34bedbf}
+      \strng{authorfullhash}{a55b7d5d1274a0ed751da98de34bedbf}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This report introduces a new family of multimodal models, Gemini, that exhibit remarkable capabilities across image, audio, video, and text understanding. The Gemini family consists of Ultra, Pro, and Nano sizes, suitable for applications ranging from complex reasoning tasks to on-device memory-constrained use-cases. Evaluation on a broad range of benchmarks shows that our most-capable Gemini Ultra model advances the state of the art in 30 of 32 of these benchmarks-notably being the first model to achieve human-expert performance on the well-studied exam benchmark MMLU, and improving the state of the art in every one of the 20 multimodal benchmarks we examined. We believe that the new capabilities of the Gemini family in cross-modal reasoning and language understanding will enable a wide variety of use cases. We discuss our approach toward post-training and deploying Gemini models responsibly to users through services including Gemini, Gemini Advanced, Google AI Studio, and Cloud Vertex AI.}
+      \field{title}{Gemini: A Family of Highly Capable Multimodal Models}
+      \field{year}{2025}
+    \endentry
+  \enddatalist
+  \missing{Dosovitskiy2020}
+  \missing{Oquab2024}
+\endrefsection
+\endinput
+
