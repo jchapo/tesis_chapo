@@ -282,8 +282,34 @@
 % ------------------------------------------------------------------
 % ANEXOS
 % ------------------------------------------------------------------
+\cleardoublepage
+
+% Reiniciar el estilo de numeración de capítulos para anexos
+\renewcommand{\chaptername}{Anexo}
+\renewcommand{\thechapter}{\Alph{chapter}}
+
+% Modificar el formato de capítulos para anexos (en las páginas)
+\titleformat{\chapter}[hang]
+{\normalfont\fontsize{14}{16}\bfseries\selectfont}
+{Anexo \thechapter.}{1em}{}
+
 \titlespacing*{\chapter}{0pt}{0pt}{40pt}
+
+% Modificar cómo aparecen en el índice (solo "Anexo A. Título")
+\titlecontents{chapter}
+  [0em]
+  {\bfseries}
+  {Anexo \thecontentslabel. }
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
+
+% Ocultar secciones del índice SOLO para anexos
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
 \appendix
 \input{apendices/anexos.tex}
+
+% Restablecer el tocdepth después de los anexos
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
 
 \end{document}
