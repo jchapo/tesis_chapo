@@ -115,35 +115,44 @@ Las mejoras en análisis visual incluyen mejor razonamiento espacial, capacidade
     \label{fig:gemini_analysis}
 \end{figure}
 
-El sistema soporta modalidades múltiples incluyendo texto, imagen, audio y video, con capacidad de procesamiento de imágenes de hasta 30MB en formatos JPEG, PNG, GIF, WebP, PDF, SVG y HEIC. La ventana de contexto se expande masivamente a 2 millones de tokens.
+Gemini 2.0 Flash integra \textit{Google Lens} como módulo nativo, eliminando la arquitectura de integración externa de generaciones anteriores. Esta fusión completa permite acceso directo al \textit{Knowledge Graph} de Google y a la base de datos de productos de \textit{Google Shopping} para la identificación automática de objetos de referencia conocidos.
 
-Gemini 2.0 Flash integra Google Lens como módulo nativo, eliminando la arquitectura de integración externa de generaciones anteriores. El sistema demuestra precisión mejorada en estimaciones dimensionales, alcanzando márgenes de $\pm$8--15\% con objetos de referencia en productos estándar, $\pm$5--12\% en condiciones de laboratorio controlado, y $\pm$12--25\% en uso típico de usuarios reales \cite{Team20252}.
+El sistema demuestra precisión mejorada en estimaciones dimensionales, alcanzando márgenes de $\pm$8--15\% con objetos de referencia en productos estándar, $\pm$5--12\% en condiciones de laboratorio controlado, y $\pm$12--25\% en uso típico de usuarios reales. Estas métricas representan una mejora del 30--40\% comparado con Gemini 1.0 \cite{Team20251}.
 
-Implementaciones específicas en logística incluyen:
-\begin{itemize}
-    \item Análisis de inventario en tiempo real para Google Shopping
-    \item Medición automatizada de productos para Google Merchant Center
-    \item Optimización de embalaje en centros de distribución
-    \item Análisis de fotografías de productos para Google Lens Shopping
-\end{itemize}
+Las capacidades incluyen detección automática de objetos de referencia conocidos, comparación automática con elementos de escala estándar y mejor adaptación a condiciones variables de iluminación y ángulos de captura. El tiempo de procesamiento promedio se reduce a 2--4 segundos, comparado con 5--8 segundos de versiones anteriores.
+
+Las evaluaciones técnicas de Gemini 2.0 Flash revelan variabilidad significativa en precisión según condiciones operacionales. En condiciones controladas de laboratorio con iluminación estándar y ángulos óptimos, el sistema alcanza precisiones de $\pm$5--12\%, competitivas con sistemas de visión por computadora tradicionales para aplicaciones no críticas.
+
+En condiciones reales de uso, incluyendo variaciones de iluminación, ángulos subóptimos y \textit{backgrounds} complejos, la precisión se degrada a $\pm$12--25\%, manteniendo utilidad para categorización logística y estimaciones aproximadas. La adaptación a condiciones variables representa una mejora sustancial comparado con generaciones anteriores.
+
+Implementaciones específicas en logística incluyen análisis de inventario en tiempo real para \textit{Google Shopping}, medición automatizada de productos para \textit{Google Merchant Center}, optimización de embalaje en centros de distribución de Google y análisis de fotografías de productos para \textit{Google Lens Shopping}, demostrando aplicabilidad práctica en operaciones comerciales reales.
+
+Las ventajas competitivas específicas incluyen velocidad significativamente superior comparado con GPT-4V debido a optimizaciones \textit{Flash}, integración nativa con \textit{Google Lens} y \textit{Knowledge Graph}, mejor manejo de múltiples objetos simultáneos y acceso privilegiado a la base de datos de productos de \textit{Google Shopping} para identificación automática.
+
+Las limitaciones operacionales identificadas incluyen dependencia del ecosistema Google para rendimiento máximo, menor precisión que sensores dedicados de hardware, variabilidad en rendimiento entre dispositivos Android de diferentes fabricantes y documentación técnica detallada aún limitada debido al reciente lanzamiento.
+
+El modelo establece un nuevo estándar en velocidad de procesamiento multimodal, posicionándose como solución óptima para aplicaciones logísticas que requieren análisis visual rápido con precisión moderada, particularmente en entornos que ya utilizan infraestructura Android y servicios Google.
+
+\subsection{Aplicaciones de LLMs multimodal en logística y comercio electrónico}
 
 \subsubsection{Caso 4: Vision Transformer (ViT) para reconocimiento y dimensionado de productos}
+\subsubsection{Aplicaciones académicas de Vision Transformers en estimación dimensional}
 
-Vision Transformer (ViT), introducido por Dosovitskiy et al. en Google Research (2020) y publicado en ICLR 2021, revolucionó el campo de \textit{computer vision} al demostrar que arquitecturas transformer puras pueden superar las redes neuronales convolucionales tradicionales en tareas de reconocimiento de imágenes. El modelo alcanza 94.2\% de precisión en \textit{ImageNet classification} cuando se \textit{pre-entrena} en \textit{datasets} suficientemente grandes \cite{Dosovitskiy2020}.
+\textit{Vision Transformer} (ViT), introducido por Dosovitskiy et al. en Google Research (2020) y publicado en ICLR 2021, revolucionó el campo de \textit{computer vision} al demostrar que arquitecturas \textit{transformer} puras pueden superar las redes neuronales convolucionales tradicionales en tareas de reconocimiento de imágenes. El modelo alcanza un 94.2\% de precisión en \textit{ImageNet classification} cuando se preentrena en conjuntos de datos suficientemente grandes \cite{Dosovitskiy2020}.
 
-La arquitectura divide imágenes en \textit{patches} de 16$\times$16 píxeles que se procesan como secuencias, similar al procesamiento de tokens en modelos de lenguaje. Esta metodología permite \textit{transfer learning} eficiente para nuevas categorías de productos.
+La arquitectura divide imágenes en \textit{patches} de 16$\times$16 píxeles que se procesan como secuencias, similar al procesamiento de tokens en modelos de lenguaje. Esta metodología permite un \textit{transfer learning} eficiente para nuevas categorías de productos, facilitando la adaptación a catálogos específicos de \textit{e-commerce} sin necesidad de reentrenamiento completo \cite{Anthopic2025}.
 
-Las implementaciones académicas posteriores han demostrado aplicabilidad directa en \textit{retail analytics}. DINOv2 (Meta AI Research, 2023) introduce \textit{self-supervised learning} que elimina la dependencia de datasets etiquetados masivos, logrando representaciones visuales robustas especialmente efectivas para reconocimiento de productos \cite{Oquab2024}.
+Las implementaciones académicas posteriores han demostrado aplicabilidad directa en \textit{retail analytics}. DINOv2 (Meta AI Research, 2023) introduce \textit{self-supervised learning} que elimina la dependencia de conjuntos de datos etiquetados masivos, logrando representaciones visuales robustas especialmente efectivas para el reconocimiento de productos con variaciones en ángulos, iluminación y \textit{background} \cite{Team20251, ArticleRef255138}.
 
-Para estimación dimensional, las investigaciones académicas reportan precisiones de $\pm$12--18\% en objetos con referencias visuales, utilizando visual \textit{reasoning} sobre \textit{features transformer} que capturan relaciones espaciales complejas.
+Para estimación dimensional, las investigaciones académicas reportan precisiones de $\pm$12--18\% en objetos con referencias visuales, utilizando \textit{visual reasoning} sobre \textit{features transformer} que capturan relaciones espaciales complejas entre elementos en la imagen. Esta precisión es competitiva con sistemas comerciales, manteniendo la ventaja de una metodología académicamente verificable \cite{Anthopic2025, ArticleRef255138}.
 
-% ------------------------------------------------------------------
-\subsection{Aplicaciones de LLMs multimodal en logística y comercio electrónico}
-% ------------------------------------------------------------------
+Florence (Microsoft Research, 2021) establece un \textit{framework} multimodal que combina \textit{vision transformers} con capacidades de lenguaje natural, demostrando aplicabilidad directa para tareas que requieren comprensión semántica de productos y estimación de propiedades físicas. El modelo utiliza \textit{contrastive learning} entre modalidades visual y textual \cite{ArticleRef255139}.
 
-Florence (Microsoft Research, 2021) establece un framework multimodal que combina \textit{vision transformers} con capacidades de lenguaje natural, demostrando aplicabilidad directa para tareas que requieren comprensión semántica de productos y estimación de propiedades físicas.
+Las evaluaciones académicas independientes confirman escalabilidad para el procesamiento de millones de productos, con implementaciones que mantienen eficiencia computacional mediante técnicas de \textit{patch embedding} optimizadas y \textit{sparse attention mechanisms} adaptados para imágenes de alta resolución típicas en fotografía comercial \cite{ArticleRef255140}.
 
-Las evaluaciones académicas independientes confirman escalabilidad para procesamiento de millones de productos, con implementaciones que mantienen eficiencia computacional mediante técnicas de \textit{patch embedding} optimizadas.
+Estudios recientes sobre \textit{Scaling Vision Transformers to Gigapixel Images} (2022) demuestran aplicabilidad en \textit{retail analytics} de alta resolución, donde se requiere análisis detallado de texturas, materiales y características dimensionales no evidentes en resoluciones estándar. Estas implementaciones utilizan \textit{hierarchical attention mechanisms} que procesan progresivamente desde características globales hasta detalles locales \cite{ArticleRef255140}.
+
+Las adaptaciones académicas incluyen \textit{fine-tuning} específico para categorías de productos, donde modelos preentrenados se especializan en dominios particulares (electrónicos, textiles, alimentos), manteniendo la robustez general del \textit{framework ViT} mientras optimizan la precisión para características particulares de cada categoría \cite{Dosovitskiy2020}.
 
 % ------------------------------------------------------------------
 \section{Características de soluciones semejantes o similares}
@@ -151,40 +160,21 @@ Las evaluaciones académicas independientes confirman escalabilidad para procesa
 
 \subsection{Arquitecturas de procesamiento predominantes}
 
-Las soluciones analizadas convergen en arquitecturas de procesamiento que combinan múltiples enfoques tecnológicos. Los sistemas comerciales líderes utilizan \textit{transformers} multimodal que integran vision encoders especializados (CLIP, ALIGN, ViT) con \textit{large language models} para interpretación semántica avanzada.
+Las soluciones analizadas convergen en arquitecturas de procesamiento que combinan múltiples enfoques tecnológicos. Los sistemas comerciales líderes utilizan \textit{transformers} multimodales que integran \textit{vision encoders} especializados (CLIP, ALIGN, ViT) con \textit{large language models} para interpretación semántica avanzada. Las implementaciones actuales emplean \textit{attention mechanisms} \textit{cross-modal} que permiten la correlación directa entre características visuales y comprensión textual, facilitando la estimación dimensional mediante razonamiento contextual \cite{Dosovitskiy2020, Anthopic2025}.
 
-Las implementaciones actuales emplean \textit{attention mechanisms cross-modal} que permiten correlación directa entre características visuales y comprensión textual, facilitando estimación dimensional mediante razonamiento contextual \cite{Dosovitskiy2020}.
 
 \subsection{Capacidades de interpretación dimensional}
 
-Las capacidades de interpretación dimensional se fundamentan en:
+Las capacidades de interpretación dimensional se fundamentan en el reconocimiento automático de referencias de escala, donde los modelos identifican objetos conocidos (monedas, tarjetas de crédito, manos humanas) para establecer proporciones relativas. El análisis de perspectiva y profundidad visual utiliza \textit{depth estimation} implícito derivado de características de textura, sombras y relaciones espaciales capturadas por \textit{attention mechanisms} \cite{Oquab2024, ArticleRef255139}.
 
-\begin{enumerate}
-    \item \textbf{Reconocimiento automático de referencias de escala}: Los modelos identifican objetos conocidos (monedas, tarjetas, manos humanas) para establecer proporciones relativas.
-    \item \textbf{Análisis de perspectiva y profundidad visual}: Utiliza \textit{depth estimation} implícito derivado de características de textura y sombras.
-    \item \textbf{Razonamiento contextual sofisticado}: Combina reconocimiento de objetos conocidos con análisis proporcional de elementos en la imagen \cite{Oquab2024}.
-\end{enumerate}
+Los sistemas más avanzados incorporan razonamiento contextual sofisticado que combina el reconocimiento de objetos conocidos con el análisis proporcional de elementos en la imagen. Estos modelos pueden interpretar planos técnicos con dimensiones especificadas y extrapolar esta información para estimar las dimensiones de objetos fotografiados, logrando precisiones variables según la implementación.
+
 
 \subsection{Precisión y confiabilidad según implementación}
 
-La precisión varía significativamente según la implementación y condiciones operacionales:
+La precisión varía significativamente según la implementación y las condiciones operacionales. Los \textit{LLMs} multimodales alcanzan márgenes de error de $\pm$10--25\% en condiciones óptimas, los \textit{Vision Transformers} académicos reportan precisiones de $\pm$12--18\%, mientras que los sistemas comerciales con hardware especializado pueden alcanzar márgenes de $\pm$2--5\,mm para objetos regulares bajo condiciones controladas \cite{Dosovitskiy2020, Anthopic2025, Oquab2024}.
 
-\begin{table}[H]
-\centering
-\caption{Comparativa de precisión por tipo de sistema.}
-\label{tab:precision_sistemas}
-\begin{tabular}{@{}lcc@{}}
-\toprule
-\textbf{Tipo de Sistema} & \textbf{Condiciones Óptimas} & \textbf{Condiciones Reales} \\
-\midrule
-LLMs multimodal & $\pm$10--25\% & $\pm$15--30\% \\
-Vision Transformers & $\pm$12--18\% & $\pm$15--25\% \\
-Sistemas con hardware & $\pm$2--5mm & $\pm$5--10mm \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-La degradación de precisión con iluminación deficiente, ángulos subóptimos y \textit{backgrounds} complejos representa un desafío común.
+La degradación de precisión ante iluminación deficiente, ángulos subóptimos y \textit{backgrounds} complejos representa un desafío común. Los sistemas empresariales mitigan estas limitaciones mediante estaciones de medición controladas y múltiples puntos de captura, mientras que las soluciones basadas únicamente en inteligencia artificial dependen de técnicas de \textit{data augmentation} y \textit{prompt engineering} avanzado.
 
 % ------------------------------------------------------------------
 \section{Compendio de tecnologías, herramientas, métodos, modelos utilizados con éxito}
@@ -192,88 +182,45 @@ La degradación de precisión con iluminación deficiente, ángulos subóptimos 
 
 \subsection{Modelos de lenguaje multimodal predominantes}
 
-\textbf{Modelos de gran escala comerciales:}
-\begin{itemize}
-    \item GPT-4 Vision (OpenAI) - 1.76 trillones de parámetros
-    \item Claude Sonnet 4 (Anthropic) - Optimizado para razonamiento visual
-    \item Gemini 2.0 Flash (Google) - Optimizaciones de velocidad
-    \item LLaVA - Alternativas \textit{open-source}
-\end{itemize}
+Los modelos de gran escala comerciales incluyen \textit{GPT-4 Vision} (OpenAI), con una arquitectura estimada en 175 mil millones de parámetros multimodal; \textit{Claude Sonnet 4} (Anthropic), optimizado para razonamiento visual avanzado; \textit{Gemini 2.0 Flash} (Google), con optimizaciones de velocidad para procesamiento en tiempo real; y implementaciones académicas como \textit{LLaVA}, que proporcionan alternativas \textit{open-source} para investigación.
 
-\textbf{Arquitecturas especializadas predominantes:}
-\begin{itemize}
-    \item CLIP (\textit{Contrastive Language-Image Pre-training})
-    \item BLIP-2 (\textit{Bootstrapped vision-language pre-training})
-    \item InstructBLIP - Seguimiento de instrucciones específicas
-    \item MiniGPT-4 - Eficiencia en recursos limitados
-\end{itemize}
+Las arquitecturas especializadas predominantes incluyen \textit{CLIP} (\textit{Contrastive Language-Image Pre-training}), que establece \textit{embeddings joint} para modalidades visual y textual; \textit{BLIP-2} (\textit{Bootstrapped vision-language pre-training}), optimizado para comprensión visual detallada; \textit{InstructBLIP}, adaptado para seguimiento de instrucciones específicas; y \textit{MiniGPT-4}, diseñado para eficiencia en recursos computacionales limitados \cite{Dosovitskiy2020, Dosovitskiy2020}.
+
 
 \subsection{Frameworks de visión por computadora académicos}
 
-Vision Transformers (ViT) representan el estado del arte en análisis visual académico:
+\subsubsection{Modelos académicos y arquitecturas híbridas en visión computacional}
 
-\begin{itemize}
-    \item ViT-Base: 86 millones de parámetros
-    \item ViT-Large: 307 millones de parámetros
-    \item ViT-Huge: 632 millones de parámetros
-\end{itemize}
+\textit{Vision Transformers} (ViT) representan el estado del arte en análisis visual académico, con implementaciones que incluyen \textit{ViT-Base} (86 millones de parámetros), \textit{ViT-Large} (307 millones de parámetros) y \textit{ViT-Huge} (632 millones de parámetros), según los requerimientos de precisión frente a eficiencia computacional \cite{ArticleRef255139}.
 
-Modelos híbridos incluyen DeiT (\textit{Data-efficient image Transformers}), Swin Transformer optimizado para imágenes de alta resolución, y EfficientViT diseñado para implementaciones móviles.
+Los modelos híbridos combinan fortalezas de arquitecturas convolucionales y \textit{transformer}, incluyendo \textit{DeiT} (\textit{Data-efficient image Transformers}), \textit{Swin Transformer}, optimizado para imágenes de alta resolución, y \textit{EfficientViT}, diseñado para implementaciones móviles y \textit{edge computing}.
+
 
 \subsection{Tecnologías de infraestructura en la nube}
 
-\textbf{Plataformas de IA como servicio:}
-\begin{itemize}
-    \item OpenAI API con GPT-4 Vision endpoints
-    \item Anthropic Claude API para análisis multimodal
-    \item Google Vertex AI con modelos Gemini integrados
-    \item Azure Cognitive Services
-    \item AWS Bedrock
-\end{itemize}
+\subsubsection{Infraestructura de inteligencia artificial como servicio y computación distribuida}
 
-\textbf{Servicios de computación distribuida:}
-\begin{itemize}
-    \item AWS Lambda - Procesamiento \textit{serverless}
-    \item Google Cloud Run - Containerización
-    \item Azure Container Instances - Escalabilidad elástica
-    \item Kubernetes - Orquestación de microservicios
-\end{itemize}
+Las plataformas de inteligencia artificial como servicio incluyen \textit{OpenAI API} con \textit{GPT-4 Vision endpoints}, \textit{Claude API} de Anthropic para análisis multimodal vía \textit{REST}, \textit{Google Vertex AI} con modelos \textit{Gemini} integrados, \textit{Azure Cognitive Services} combinando capacidades de \textit{Computer Vision} y lenguaje natural, y \textit{AWS Bedrock}, que proporciona acceso unificado a múltiples modelos \textit{foundation} \cite{Dosovitskiy2020}.
+
+Los servicios de computación distribuida utilizan \textit{AWS Lambda} para procesamiento \textit{serverless} con escalamiento automático, \textit{Google Cloud Run} para \textit{containerización} y despliegue simplificado, \textit{Azure Container Instances} para escalabilidad elástica, y \textit{Kubernetes} para orquestación de microservicios en implementaciones híbridas \textit{cloud-on-premises} \cite{Dosovitskiy2020, ArticleRef255138}.
+
 
 \subsection{Herramientas de desarrollo e integración}
 
-\textbf{Bibliotecas de integración:}
-\begin{itemize}
-    \item LangChain - Framework para aplicaciones LLM
-    \item LlamaIndex - \textit{Retrieval-Augmented Generation}
-    \item Haystack - Pipelines \textit{end-to-end}
-    \item Transformers (HuggingFace) - Acceso a modelos pre-entrenados
-\end{itemize}
+\subsubsection{Bibliotecas de integración y SDKs para desarrollo móvil}
 
-\textbf{SDKs para desarrollo móvil:}
-\begin{itemize}
-    \item React Native con plugins para APIs de IA
-    \item Flutter con packages para computer vision
-    \item Swift/Kotlin con SDKs nativos
-    \item Progressive Web Apps para acceso universal
-\end{itemize}
+Las bibliotecas de integración predominantes incluyen \textit{LangChain} como \textit{framework} integral para aplicaciones basadas en \textit{LLM}, \textit{LlamaIndex} optimizado para \textit{Retrieval-Augmented Generation} con datos multimodales, \textit{Haystack} proporcionando \textit{pipelines} de procesamiento \textit{end-to-end}, y \textit{Transformers} (HuggingFace), que ofrece acceso unificado a modelos preentrenados \cite{Dosovitskiy2020, ArticleRef255139}.
+
+Los \textit{SDKs} para desarrollo móvil facilitan la integración nativa, incluyendo \textit{React Native} con \textit{plugins} especializados para \textit{APIs} de inteligencia artificial, \textit{Flutter} con \textit{packages} optimizados para \textit{computer vision}, \textit{Swift}/\textit{Kotlin} con \textit{SDKs} nativos de proveedores principales, y \textit{Progressive Web Apps} para acceso universal \textit{cross-platform} \cite{Anthopic2025}.
+
 
 \subsection{Metodologías de prompt engineering y optimización}
 
-\textbf{Técnicas avanzadas de diseño de prompts:}
-\begin{itemize}
-    \item \textit{Few-shot learning} para medición dimensional
-    \item \textit{Chain-of-thought prompting} para razonamiento paso a paso
-    \item \textit{Structured output formatting} para consistencia
-    \item \textit{Multi-turn conversation} para refinación iterativa
-\end{itemize}
+\subsubsection{Técnicas avanzadas de diseño de \textit{prompts} y optimización de modelos}
 
-\textbf{Estrategias de optimización:}
-\begin{itemize}
-    \item \textit{Fine-tuning} con datos del dominio logístico
-    \item \textit{Retrieval-Augmented Generation} (RAG)
-    \item \textit{In-context learning} con ejemplos calibrados
-    \item LoRA y Adapters para personalización eficiente
-\end{itemize}
+Las técnicas avanzadas de diseño de \textit{prompts} incluyen el uso de \textit{few-shot learning} para abordar tareas específicas de medición dimensional mediante la provisión de ejemplos representativos; \textit{chain-of-thought prompting} para fomentar el razonamiento paso a paso en el análisis de características espaciales; \textit{structured output formatting} para asegurar consistencia y precisión en la generación de datos cuantitativos; y \textit{multi-turn conversation} para permitir la refinación progresiva de estimaciones a través de interacciones iterativas.
+
+Por otro lado, las estrategias de optimización del modelo contemplan el \textit{fine-tuning} con conjuntos de datos específicos del dominio logístico; la aplicación de \textit{Retrieval-Augmented Generation} (\textit{RAG}) para integrar conocimiento empresarial especializado durante la generación de respuestas; el uso de \textit{in-context learning} con ejemplos calibrados de medición para mejorar la adaptación contextual del modelo; y técnicas de \textit{parameter-efficient fine-tuning}, como \textit{LoRA} y \textit{Adapters}, que permiten una personalización eficiente en costos sin requerir el ajuste completo de todos los parámetros del modelo \cite{ArticleRef255139}.
 
 % ------------------------------------------------------------------
 \section{Conjunto de características y especificaciones para la solución óptima}
@@ -281,44 +228,20 @@ Modelos híbridos incluyen DeiT (\textit{Data-efficient image Transformers}), Sw
 
 \subsection{Arquitectura tecnológica óptima}
 
-Basándose en el análisis de soluciones existentes, la arquitectura óptima debe combinar:
+\subsubsection{Propuesta de arquitectura óptima}
 
-\begin{itemize}
-    \item Modelos de lenguaje multimodal de última generación
-    \item Infraestructura \textit{cloud} escalable
-    \item Procesamiento distribuido eficiente
-    \item Interfaces móviles intuitivas
-\end{itemize}
+Basándose en el análisis de soluciones existentes, la arquitectura óptima debe combinar modelos de lenguaje multimodal de última generación con infraestructura \textit{cloud} escalable. El sistema debe utilizar un modelo multimodal como motor principal de análisis, capaz de interpretar simultáneamente entradas visuales y textuales para tareas como estimación dimensional, clasificación logística y auditoría documental.
+
+Esta integración permite aprovechar capacidades avanzadas de razonamiento contextual, atención cruzada entre modalidades y generación estructurada de respuestas, mientras se garantiza escalabilidad operativa mediante servicios distribuidos en la nube.
 
 \subsection{Precisión y confiabilidad requeridas}
 
-Para aplicaciones logísticas comerciales, el sistema debe alcanzar:
-
-\begin{itemize}
-    \item Precisión de $\pm$15--20\% en condiciones reales de uso
-    \item Mejora a $\pm$10--15\% con referencias de escala adecuadas
-    \item Tiempos de respuesta inferiores a 5 segundos
-    \item Disponibilidad superior al 99.5\%
-\end{itemize}
-
-Esta precisión es suficiente para categorización de tarifas de envío, optimización básica de carga vehicular, y estimaciones de costos logísticos sin requerir inversión en hardware especializado.
+Para aplicaciones logísticas comerciales, el sistema debe alcanzar precisiones de $\pm$15--20\% en condiciones reales de uso, mejorando a $\pm$10--15\% con referencias de escala adecuadas. Esta precisión es suficiente para la categorización de tarifas de envío, la optimización básica de carga vehicular y las estimaciones de costos logísticos sin requerir inversión en hardware especializado de sistemas \textit{enterprise}.
 
 \subsection{Limitaciones y alcances reconocidos}
 
-El sistema está diseñado para:
+El sistema está diseñado para realizar estimaciones dimensionales aproximadas, adecuadas para la categorización logística, pero no para aplicaciones que requieran precisión milimétrica. La solución es óptima para paquetes regulares de \textit{e-commerce}, dentro del rango de 5\,cm a 2\,m en cualquier dimensión.
 
-\begin{itemize}
-    \item Estimaciones dimensionales aproximadas para categorización logística
-    \item Paquetes regulares de e-commerce (5cm a 2 metros)
-    \item Condiciones de iluminación mínima adecuada
-    \item Mercado peruano inicialmente, con escalabilidad regional
-\end{itemize}
+Las limitaciones incluyen pérdida de precisión con objetos transparentes, altamente reflectivos o de formas extremadamente irregulares. El sistema requiere una iluminación mínima adecuada y no está optimizado para condiciones de muy baja luminosidad sin asistencia de \textit{flash}.
 
-Limitaciones reconocidas:
-
-\begin{itemize}
-    \item No apto para aplicaciones que requieran precisión milimétrica
-    \item Degradación con objetos transparentes o altamente reflectivos
-    \item Requiere iluminación mínima adecuada
-    \item Formas extremadamente irregulares presentan mayor error
-\end{itemize}
+La implementación está inicialmente orientada al mercado peruano.
