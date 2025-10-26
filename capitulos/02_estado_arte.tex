@@ -13,18 +13,20 @@
 
 \subsubsection{Caso 1: GPT-4 Vision para análisis de objetos (OpenAI, Estados Unidos, 2023)}
 
-GPT-4 Vision, lanzado en septiembre de 2023, representa el primer modelo de lenguaje de gran escala con capacidades multimodal nativas de OpenAI. El sistema demuestra capacidades avanzadas de interpretación visual con un 95\% de precisión en reconocimiento de objetos comunes y 78.5\% de efectividad en análisis de gráficos complejos según evaluaciones técnicas independientes \cite{Yu2024}.
+GPT-4 Vision, lanzado en septiembre de 2023, representa el primer modelo de lenguaje de gran escala con capacidades multimodal nativas de OpenAI. El sistema demuestra capacidades avanzadas de interpretación visual con un 95\% de precisión en reconocimiento de objetos comunes y 78.5\% de efectividad en análisis de gráficos complejos según evaluaciones técnicas independientes \cite{ArticleRef255136}.
 
-En términos de estimación dimensional, GPT-4V utiliza razonamiento contextual para comparar tamaños relativos entre objetos, empleando elementos conocidos como referencias de escala. Las evaluaciones técnicas reportan una precisión de $\pm$15--25\% de error en estimaciones dimensionales cuando se proporcionan referencias visuales adecuadas, mejorando a $\pm$10--20\% bajo condiciones de iluminación controlada.
+En términos de estimación dimensional, GPT-4V utiliza razonamiento contextual para comparar tamaños relativos entre objetos, empleando elementos conocidos como referencias de escala. Las evaluaciones técnicas reportan una precisión de $\pm$15--25\% de error en estimaciones dimensionales cuando se proporcionan referencias visuales adecuadas, mejorando a $\pm$10--20\% bajo condiciones de iluminación controlada \cite{Yu2024}.
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.9\textwidth]{gpt4_vision_example.png}
-    \caption{Consulta a GPT-4 para análisis de múltiples imágenes.}
+    \includegraphics[width=0.9\textwidth]{gpt4_vision_example.png}
+    \caption{Consulta a GPT-4 para análisis de múltiples imágenes. Fuente \cite{ArticleRef255134}}
     \label{fig:gpt4_vision}
 \end{figure}
 
-La arquitectura se basa en un \textit{transformer} multimodal que integra un codificador visual especializado con el modelo de lenguaje GPT-4, estimado en 1.76 trillones de parámetros. El sistema procesa imágenes de hasta 2048$\times$2048 píxeles en formatos JPEG, PNG, GIF y WebP.
+La arquitectura se basa en un \textit{transformer} multimodal que integra un codificador visual especializado con el modelo de lenguaje GPT-4, estimado en 1.76 trillones de parámetros. El sistema procesa imágenes de hasta 2048$\times$2048 píxeles en formatos JPEG, PNG, GIF y WebP, utilizando técnicas de atención cruzada para correlacionar información visual con conocimiento lingüístico \cite{ArticleRef255134}.
+
+El modelo emplea un enfoque de \textit{vision-language understanding} que permite no solo identificar objetos, sino también razonar sobre sus propiedades físicas, relaciones espaciales y características dimensionales mediante una interpretación contextual similar al razonamiento humano \cite{ArticleRef255136}.
 
 Las evaluaciones técnicas del sistema revelan un rendimiento variable según el contexto de aplicación:
 
@@ -35,53 +37,80 @@ Las evaluaciones técnicas del sistema revelan un rendimiento variable según el
     \item ChartQA: 78.5\% en análisis de gráficos y visualizaciones
 \end{itemize}
 
-Las limitaciones incluyen:
+Para tareas específicas de estimación dimensional, el sistema muestra mejor rendimiento en cajas rectangulares estándar, objetos con formas geométricas simples y productos comerciales conocidos, alcanzando precisiones útiles para la categorización logística y la clasificación de tarifas de envío \cite{Yu2024}.
+
+Las evaluaciones técnicas identifican limitaciones significativas en aplicaciones que requieren precisión cuantitativa absoluta:
+
 \begin{itemize}
-    \item Sin calibración externa: Incremento del error a $\pm$30--50\%
-    \item Sensibilidad ambiental: Degradación con variaciones en iluminación
-    \item Limitaciones de escala: Rendimiento reducido en objetos menores a 5cm
-    \item Objetos problemáticos: Dificultades con elementos transparentes
+    \item \textbf{Sin calibración externa:} incremento del error a $\pm$30--50\% en ausencia de referencias de escala conocidas.
+    \item \textbf{Sensibilidad ambiental:} degradación de precisión con variaciones en iluminación, ángulos de captura y condiciones visuales.
+    \item \textbf{Limitaciones de escala:} rendimiento reducido en objetos menores a 5\,cm o con formas irregulares complejas.
+    \item \textbf{Objetos problemáticos:} dificultades con elementos transparentes, reflectivos o sin texturas distintivas.
 \end{itemize}
+
+El \textit{GPT-4V System Card} oficial de OpenAI reconoce explícitamente que “el modelo no está optimizado para mediciones precisas y puede proporcionar estimaciones aproximadas que requieren validación adicional para aplicaciones críticas” \cite{ArticleRef255136}.
+
 
 \subsubsection{Caso 2: Claude 3 Vision}
 
-Claude 3, lanzado en marzo de 2024 en sus variantes Haiku, Sonnet y Opus, establece un nuevo estándar en interpretación multimodal con un enfoque específico en razonamiento avanzado sobre contenido visual complejo. El sistema demuestra capacidades superiores a GPT-4V en interpretación de gráficos y documentos técnicos, alcanzando 86.8\% en el \textit{benchmark} MMLU y 60.1\% en problemas matemáticos complejos.
+Claude 3, lanzado en marzo de 2024 en sus variantes Haiku, Sonnet y Opus, establece un nuevo estándar en interpretación multimodal con un enfoque específico en razonamiento avanzado sobre contenido visual complejo. El sistema demuestra capacidades superiores a GPT-4V en interpretación de gráficos y documentos técnicos, alcanzando un 86.8\% en el benchmark MMLU y un 60.1\% en problemas matemáticos complejos con componentes visuales \cite{Anthropic2024}.
+
+La arquitectura del modelo incorpora una ventana de contexto extendida de 200{,}000 tokens que incluye contenido visual, permitiendo el análisis simultáneo de múltiples imágenes y documentos dentro de una sola conversación. Esta capacidad es particularmente relevante para el análisis de inventarios complejos, donde se requiere correlacionar información entre múltiples fuentes visuales \cite{WebRef13251}.
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.85\textwidth]{claude3_vision_detection.png}
-    \caption{Identificación de objetos visualmente usando modelos de Claude 3.}
+    \includegraphics[width=0.85\textwidth]{claude3_vision_detection.png}
+    \caption{Identificación de objetos visualmente usando modelos de Claude 3. Fuente: \cite{Anthropic2024}}
     \label{fig:claude3_detection}
 \end{figure}
 
-La arquitectura del modelo incorpora una ventana de contexto extendida de 200,000 tokens que incluye contenido visual, permitiendo el análisis simultáneo de múltiples imágenes y documentos dentro de una sola conversación.
+Claude 3 destaca en el reconocimiento óptico de caracteres (\textit{OCR}) en imágenes complejas, el procesamiento de documentos técnicos con \textit{layouts} sofisticados y la comprensión contextual de diagramas industriales, superando consistentemente a modelos anteriores en \textit{benchmarks} de comprensión documental \cite{Anthropic2024}.
+
+El modelo exhibe capacidades avanzadas de razonamiento espacial que superan a sus predecesores en tareas que requieren comprensión de relaciones geométricas y propiedades físicas de objetos. Las evaluaciones técnicas independientes reportan un rendimiento superior en tareas de razonamiento espacial, con particular fortaleza en la interpretación de \textit{layouts} complejos y relaciones proporcionales entre elementos.
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.85\textwidth]{claude3_json_output.png}
-    \caption{Solicitud de reconocimiento de una imagen y reorganización en formato JSON.}
+    \includegraphics[width=0.85\textwidth]{claude3_json_output.png}
+    \caption{Solicitud de reconocimiento de una imagen y reorganización en formato JSON.Fuente: \cite{Anthropic2024}}
     \label{fig:claude3_json}
 \end{figure}
 
-Para estimación dimensional, Claude 3 utiliza razonamiento contextual sofisticado que combina reconocimiento de objetos conocidos con análisis proporcional de elementos en la imagen. El sistema puede interpretar planos técnicos con dimensiones especificadas y extrapolar esta información para estimar las dimensiones de objetos fotografiados, logrando precisiones de $\pm$20--30\% en estimaciones sin referencias calibradas externas.
+Para estimación dimensional, Claude 3 utiliza razonamiento contextual sofisticado que combina el reconocimiento de objetos conocidos con el análisis proporcional de elementos en la imagen. El sistema puede interpretar planos técnicos con dimensiones especificadas y extrapolar esta información para estimar las dimensiones de objetos fotografiados, logrando precisiones de $\pm$20--30\% en estimaciones sin referencias calibradas externas \cite{WebRef13251}.
 
-Las implementaciones documentadas incluyen:
+La capacidad de procesamiento de documentos técnicos permite al modelo analizar especificaciones de productos, diagramas de embalaje y planos industriales, proporcionando estimaciones dimensionales basadas en la información contextual disponible en los documentos \cite{Anthropic2024}.
+
+Claude 3 ofrece integración empresarial a través de la \textit{Anthropic API v1}, que proporciona \textit{endpoints RESTful} con autenticación basada en \textit{API keys} y límites de 4{,}000 tokens por minuto para todas las variantes del modelo. La \textit{API} soporta imágenes de hasta 20\,MB en formatos JPEG, PNG, GIF, WebP y PDF, facilitando la integración con sistemas existentes de gestión documental.
+
+La arquitectura de la \textit{API} permite respuestas en múltiples formatos estructurados, incluyendo \textit{JSON}, texto estructurado y \textit{Markdown}, lo que facilita la integración con sistemas \textit{ERP}, plataformas de \textit{e-commerce} y aplicaciones de gestión logística. El sistema soporta procesamiento \textit{batch} para el análisis de grandes volúmenes de documentos y fotografías de inventario.
+
+Las capacidades de \textit{streaming} permiten respuestas en tiempo real para aplicaciones interactivas, mientras que el modelo de \textit{pricing} por token de entrada y salida ofrece predictibilidad en los costos operacionales para implementaciones empresariales a gran escala.
+
+Las implementaciones documentadas de Claude 3 en sectores logísticos y manufactureros incluyen aplicaciones específicas que aprovechan sus capacidades multimodales avanzadas:
+
 \begin{itemize}
-    \item Análisis de especificaciones técnicas
-    \item Interpretación de diagramas de embalaje
-    \item Auditoría visual de inventarios
-    \item Análisis de documentos comerciales
+    \item \textbf{Análisis de especificaciones técnicas:} procesamiento automatizado de documentos de productos que incluyen planos técnicos con dimensiones especificadas, permitiendo extraer automáticamente información dimensional para sistemas de gestión de inventarios.
+    \item \textbf{Interpretación de diagramas de embalaje:} análisis de documentos de \textit{packaging} que especifican configuraciones de empaque, permitiendo optimizar la utilización de espacio en contenedores y vehículos de transporte basándose en la interpretación visual de diagramas complejos.
+    \item \textbf{Auditoría visual de inventarios:} procesamiento de fotografías de almacenes y centros de distribución para identificar discrepancias entre el inventario físico y los registros digitales, utilizando capacidades de reconocimiento de objetos y análisis espacial.
+    \item \textbf{Análisis de documentos comerciales:} interpretación de facturas, órdenes de compra y documentos de envío que incluyen especificaciones de productos, automatizando la extracción de información dimensional crítica para procesos logísticos \cite{Anthropic2024}.
 \end{itemize}
 
-Ventajas competitivas: ventana de contexto extendida (200K vs 128K tokens), mejor comprensión de documentos complejos, razonamiento espacial más avanzado, y menor tendencia a alucinaciones en datos técnicos críticos.
+Las ventajas competitivas identificadas incluyen la ventana de contexto extendida (200K frente a 128K tokens de GPT-4), mejor comprensión de documentos complejos, razonamiento espacial más avanzado y menor tendencia a alucinaciones en datos técnicos críticos \cite{Anthropic2024}.
+
+Las limitaciones operacionales incluyen una precisión dimensional comparable a GPT-4V ($\pm$20--30\%), dependencia de la calidad de imagen para un \textit{OCR} efectivo, costos por token potencialmente superiores a los de alternativas, y un ecosistema menos maduro de herramientas de terceros en comparación con OpenAI.
+
 
 \subsubsection{Caso 3: Gemini 2.0 Flash}
 
-Gemini 2.0 Flash, lanzado en diciembre de 2024, representa la segunda generación de modelos multimodal de Google con optimizaciones específicas para velocidad de procesamiento y análisis visual en tiempo real \cite{Team20251}. El modelo incorpora una arquitectura \textit{transformer} multimodal de segunda generación optimizada para respuestas rápidas, logrando velocidades hasta 2$\times$ superiores a Gemini 1.0.
+Gemini 2.0 Flash, lanzado en diciembre de 2024, representa la segunda generación de modelos multimodales de Google con optimizaciones específicas para velocidad de procesamiento y análisis visual en tiempo real. El modelo incorpora una arquitectura \textit{transformer} multimodal de segunda generación optimizada para respuestas rápidas (denominación \textit{Flash}), logrando velocidades hasta 2$\times$ superiores a Gemini 1.0 en procesamiento multimodal \cite{Team20252, Team20251}.
+
+El sistema soporta modalidades múltiples incluyendo texto, imagen, audio y video, con capacidad de procesamiento de imágenes de hasta 30\,MB en formatos \textit{JPEG}, \textit{PNG}, \textit{GIF}, \textit{WebP}, \textit{PDF}, \textit{SVG} y \textit{HEIC}. La ventana de contexto se expande masivamente a 2 millones de tokens, permitiendo el análisis simultáneo de múltiples documentos visuales complejos dentro de una sola sesión.
+
+Las mejoras en análisis visual incluyen mejor razonamiento espacial, capacidades de análisis en tiempo real optimizadas y procesamiento simultáneo de hasta 20 objetos en una imagen individual, superando significativamente las limitaciones de 8--10 objetos de Gemini 1.0 \cite{Team20251}.
+
 
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.9\textwidth]{gemini_multiimage_analysis.png}
+    \includegraphics[width=0.9\textwidth]{gemini_multiimage_analysis.png}
     \caption{Se solicita a Gemini reconocer las imágenes y encontrar una relación entre ellas.}
     \label{fig:gemini_analysis}
 \end{figure}
