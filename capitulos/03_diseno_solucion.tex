@@ -9,7 +9,7 @@
 % INTRODUCCIÓN AL CAPÍTULO
 % ------------------------------------------------------------------
 
-El capítulo describe el diseño de la solución técnica al problema de la estimación manual e inexacta de dimensiones de paquetes en pymes de delivery en Lima. Basado en la metodología Design Thinking, el proceso asegura que cada decisión técnica responda a las necesidades reales de los usuarios y al contexto local.
+El capítulo describe el diseño de la solución técnica al problema de la estimación manual e inexacta de dimensiones de paquetes en pymes de \textit{delivery} en Lima. Basado en la metodología Design Thinking, el proceso asegura que cada decisión técnica responda a las necesidades reales de los usuarios y al contexto local.
 
 Se siguen cuatro fases del método aplicadas al diseño: Empatizar, Definir, Idear y Prototipar, dejando la fase de Evaluación para el siguiente capítulo donde se analizará la viabilidad técnica, económica y social de la solución diseñada.
 
@@ -21,7 +21,7 @@ Cada etapa genera entregables que reflejan las competencias del Ingeniero de Tel
 
 \subsection{Justificación del enfoque centrado en el usuario}
 
-La aplicación de Design Thinking en este proyecto de ingeniería de telecomunicaciones permite equilibrar la complejidad técnica con las necesidades reales de las pymes de delivery en Lima. Este enfoque integra el rigor de la ingeniería —infraestructura cloud, latencia, disponibilidad, escalabilidad y optimización en dispositivos móviles— con la comprensión de las condiciones operativas reales, evitando soluciones avanzadas pero inviables o desconectadas del contexto. 
+La aplicación de Design Thinking en este proyecto de ingeniería de telecomunicaciones permite equilibrar la complejidad técnica con las necesidades reales de las pymes de \textit{delivery} en Lima. Este enfoque integra el rigor de la ingeniería —infraestructura cloud, latencia, disponibilidad, escalabilidad y optimización en dispositivos móviles— con la comprensión de las condiciones operativas reales, evitando soluciones avanzadas pero inviables o desconectadas del contexto. 
 
 Su carácter iterativo facilita ajustes basados en retroalimentación, garantizando una solución técnicamente robusta, económicamente viable y adoptable, alineada con las competencias profesionales del ingeniero de telecomunicaciones y los Objetivos de Desarrollo Sostenible.
 
@@ -30,7 +30,7 @@ Su carácter iterativo facilita ajustes basados en retroalimentación, garantiza
 Este capítulo desarrolla cuatro de las cinco fases del Design Thinking, enfocándose en el diseño de la solución:
 
 \begin{itemize}
-    \item \textbf{Empatizar}: Se busca comprender las necesidades reales de los usuarios, identificando los problemas operativos que enfrentan las empresas de delivery al estimar manualmente las dimensiones de paquetes.
+    \item \textbf{Empatizar}: Se busca comprender las necesidades reales de los usuarios, identificando los problemas operativos que enfrentan las empresas de \textit{delivery} al estimar manualmente las dimensiones de paquetes.
     
     \item \textbf{Definir}: Se establecen los requerimientos funcionales y no funcionales que debe cumplir el sistema de gestión logística a partir de los hallazgos obtenidos.
     
@@ -47,7 +47,7 @@ Este capítulo desarrolla cuatro de las cinco fases del Design Thinking, enfocá
 
 \subsubsection{Contexto geográfico e institucional}
 
-El proyecto se desarrolla en el contexto de las pequeñas y medianas empresas de delivery que operan en Lima, Perú, una ciudad de alta densidad urbana. El mercado logístico local se caracteriza por la predominancia de procesos manuales, la alta informalidad, el uso intensivo de motorizados en motocicletas para entregas de último kilómetro y una creciente demanda de servicios de delivery impulsada por el comercio electrónico.
+El proyecto se desarrolla en el contexto de las pequeñas y medianas empresas de \textit{delivery} que operan en Lima, Perú, una ciudad de alta densidad urbana. El mercado logístico local se caracteriza por la predominancia de procesos manuales, la alta informalidad, el uso intensivo de motorizados en motocicletas para entregas de último kilómetro y una creciente demanda de servicios de \textit{delivery} impulsada por el comercio electrónico.
 
 Estas empresas operan sin sistemas tecnológicos integrados, dependiendo de la comunicación por WhatsApp, los registros en hojas de cálculo y la coordinación telefónica, lo que genera ineficiencias, falta de trazabilidad y dificultades para escalar sus operaciones.
 
@@ -56,7 +56,7 @@ Estas empresas operan sin sistemas tecnológicos integrados, dependiendo de la c
 Para comprender el contexto y las necesidades de los usuarios, se aplicaron dos técnicas principales:
 
 \begin{enumerate}
-    \item \textbf{Análisis del flujo logístico}: Se estudió el proceso desde el registro de pedidos hasta la entrega final en pequeñas empresas de delivery, identificando ineficiencias y oportunidades de automatización.
+    \item \textbf{Análisis del flujo logístico}: Se estudió el proceso desde el registro de pedidos hasta la entrega final en pequeñas empresas de \textit{delivery}, identificando ineficiencias y oportunidades de automatización.
     
     \item \textbf{Análisis comparativo de soluciones}: Se evaluaron las herramientas tecnológicas existentes, tanto informales como comerciales, analizando sus funciones, limitaciones y costos. Este análisis evidenció vacíos en las herramientas actuales y oportunidades para integrar tecnologías emergentes como la inteligencia artificial multimodal.
 \end{enumerate}
@@ -73,8 +73,6 @@ El análisis identificó cinco actores clave en el sistema:
     \item \textbf{Motorizados}: Ejecutan las entregas en campo y demandan información clara sobre asignaciones, rutas optimizadas y herramientas para registrar evidencias.
     
     \item \textbf{Destinatarios}: Reciben los paquetes y esperan puntualidad e información sobre el estado de su entrega.
-    
-    \item \textbf{Empresas de delivery}: Buscan crecer sosteniblemente con soluciones tecnológicas de bajo costo.
 \end{itemize}
 
 La tabla del Anexo A detalla el rol específico de cada actor, sus necesidades principales y los problemas operativos actuales que enfrentan, información fundamental para la definición de requerimientos del sistema. Esta caracterización exhaustiva de actores permite asegurar que el diseño técnico considere las perspectivas de todos los usuarios que interactuarán con el sistema, desde la interfaz móvil optimizada para operación en campo por motorizados hasta el dashboard web con análisis en tiempo real para administradores.
@@ -93,148 +91,139 @@ Estos hallazgos revelan que el desafío técnico trasciende la simple automatiza
 
 Con base en los hallazgos de la fase de empatía, se formula el siguiente problema técnico:
 
-Las pequeñas y medianas empresas de delivery en Lima enfrentan ineficiencias operativas derivadas de la estimación manual e inexacta de dimensiones de paquetes, la falta de trazabilidad en tiempo real de las entregas, y la gestión desarticulada mediante herramientas informales (WhatsApp, hojas de cálculo). Esta problemática genera costos ocultos por viajes innecesarios, insatisfacción de clientes por reprogramaciones, y limitaciones para escalar operaciones.
+Las pequeñas y medianas empresas de \textit{delivery} en Lima enfrentan ineficiencias operativas derivadas de la estimación manual e inexacta de dimensiones de paquetes, la falta de trazabilidad en tiempo real de las entregas, y la gestión desarticulada mediante herramientas informales (WhatsApp, hojas de cálculo). Esta problemática genera costos ocultos por viajes innecesarios, insatisfacción de clientes por reprogramaciones, y limitaciones para escalar operaciones.
 
 Desde la perspectiva de ingeniería de telecomunicaciones, se requiere diseñar una arquitectura distribuida que integre procesamiento de imágenes con inteligencia artificial en la nube y aplicaciones móviles, todo bajo un modelo económicamente viable para empresas emergentes y cumpliendo con normativas de protección de datos personales.
 
 \subsection{Requerimientos funcionales del sistema}
 
-\subsubsection{Gestión de usuarios y roles}
 
-\begin{itemize}
-    \item \textbf{RF1.1}: El sistema debe permitir el registro y autenticación de usuarios.
-    \item \textbf{RF1.2}: El sistema debe permitir que el Administrador gestione pedidos, usuarios y visualice motorizados en tiempo real.
-    \item \textbf{RF1.3}: El sistema debe permitir que el Cliente cree pedidos, registre datos y suba fotos.
-    \item \textbf{RF1.4}: El sistema debe permitir que el Motorizado reciba y actualice el estado de pedidos asignados.
-\end{itemize}
 
-\subsubsection{Gestión de pedidos}
+\begin{longtable}{@{}p{3.5cm}p{1.5cm}p{10cm}@{}}
+\caption{Requisitos funcionales del sistema} \\
+\toprule
+\textbf{Categoría} & \textbf{Código} & \textbf{Descripción} \\ 
+\midrule
+\endfirsthead
 
-\begin{itemize}
-    \item \textbf{RF2.1}: El cliente debe poder crear pedidos en el sistema, incluyendo datos básicos: dirección de recojo, dirección de entrega, cliente, foto del pedido, número celular y distrito de entrega.
-    
-    \item \textbf{RF2.2}: Al crear un pedido, el cliente debe subir fotos del paquete.
-    
-    \item \textbf{RF2.3}: El sistema debe procesar las fotos usando IA multimodal para detectar objetos de referencia (tarjeta/moneda), activar Cloud Functions que ejecuten el modelo de IA para calcular las dimensiones del paquete basadas en la referencia detectada.
-    
-    \item \textbf{RF2.4}: El sistema debe guardar las dimensiones junto con la información del pedido y permitir la edición manual de las dimensiones estimadas en caso de error en el cálculo automático.
-    
-    \item \textbf{RF2.5}: El administrador debe poder asignar pedidos a un motorizado.
-\end{itemize}
+\multicolumn{3}{c}%
+{\tablename\ \thetable{} -- continuación de la página anterior} \\
+\toprule
+\textbf{Categoría} & \textbf{Código} & \textbf{Descripción} \\ 
+\midrule
+\endhead
 
-\subsubsection{Gestión de motorizados}
+\midrule \multicolumn{3}{r}{{Continúa en la siguiente página}} \\ 
+\bottomrule
+\endfoot
 
-\begin{itemize}
-    \item \textbf{RF3.1}: El motorizado debe visualizar en la aplicación móvil los pedidos asignados.
-    \item \textbf{RF3.2}: El motorizado debe poder capturar foto en el recojo del pedido (evidencia).
-    \item \textbf{RF3.3}: El motorizado debe poder capturar foto en la entrega (evidencia).
-    \item \textbf{RF3.4}: El sistema debe cambiar automáticamente el estado del pedido al momento de capturar fotos de evidencia: de "pendiente" a "en tránsito" al capturar foto de recojo, y de "en tránsito" a "entregado" al capturar foto de entrega.
-    \item \textbf{RF3.5}: El motorizado puede visualizar los pedidos en un mapa.
-\end{itemize}
+\bottomrule
+\endlastfoot
 
-\subsubsection{Dashboard Web (administrador)}
+% ---------- CONTENIDO DE LA TABLA ----------
 
-\begin{itemize}
-    \item \textbf{RF4.1}: El administrador debe visualizar en un dashboard la lista de pedidos, estados, dimensiones estimadas, fotos de evidencia y motorizado asignado.
-    \item \textbf{RF4.2}: El dashboard debe permitir filtrar pedidos por estado, cliente o motorizado.
-    \item \textbf{RF4.3}: El administrador debe poder visualizar la ubicación en tiempo real de los motorizados en un mapa dentro del dashboard web.
-\end{itemize}
+\multirow{4}{=}{Gestión de usuarios y roles} 
+& RF1.1 & El sistema debe permitir el registro y autenticación de usuarios. \\
+& RF1.2 & El sistema debe permitir que el Administrador gestione pedidos, usuarios y visualice motorizados en tiempo real. \\
+& RF1.3 & El sistema debe permitir que el Cliente cree pedidos, registre datos y suba fotos. \\
+& RF1.4 & El sistema debe permitir que el Motorizado reciba y actualice el estado de pedidos asignados. \\ \midrule
 
-\subsubsection{Notificaciones y sincronización}
+\multirow{5}{=}{Gestión de pedidos} 
+& RF2.1 & El cliente debe poder crear pedidos en el sistema, incluyendo dirección de recojo, dirección de entrega, cliente, foto, celular y distrito. \\
+& RF2.2 & Al crear un pedido, el cliente debe subir fotos del paquete. \\
+& RF2.3 & El sistema debe procesar las fotos usando IA multimodal para detectar objetos de referencia y calcular dimensiones. \\
+& RF2.4 & El sistema debe guardar las dimensiones junto con la información del pedido y permitir su edición manual. \\
+& RF2.5 & El administrador debe poder asignar pedidos a un motorizado. \\ \midrule
 
-\begin{itemize}
-    \item \textbf{RF5.1}: El motorizado debe recibir notificaciones push automáticas cuando se le asigne un nuevo pedido.
-    \item \textbf{RF5.2}: El cliente debe recibir notificaciones push sobre cambios de estado del pedido.
-\end{itemize}
+\multirow{5}{=}{Gestión de motorizados} 
+& RF3.1 & El motorizado debe visualizar en la aplicación móvil los pedidos asignados. \\
+& RF3.2 & El motorizado debe poder capturar foto en el recojo del pedido (evidencia). \\
+& RF3.3 & El motorizado debe poder capturar foto en la entrega (evidencia). \\
+& RF3.4 & El sistema debe cambiar automáticamente el estado del pedido al capturar fotos de evidencia. \\
+& RF3.5 & El motorizado puede visualizar los pedidos en un mapa. \\ \midrule
 
-\subsubsection{Seguridad y consistencia}
+\multirow{3}{=}{Dashboard Web (administrador)} 
+& RF4.1 & El administrador debe visualizar en un dashboard la lista de pedidos, estados, dimensiones, fotos y motorizado asignado. \\
+& RF4.2 & El dashboard debe permitir filtrar pedidos por estado, cliente o motorizado. \\
+& RF4.3 & El administrador debe poder visualizar la ubicación en tiempo real de los motorizados en un mapa dentro del dashboard web. \\ \midrule
 
-\begin{itemize}
-    \item \textbf{RF6.1}: El sistema debe asegurar el acceso por roles (cada usuario solo ve lo que le corresponde).
-    \item \textbf{RF6.2}: El sistema debe cifrar las comunicaciones mediante TLS y proteger el acceso a datos mediante reglas de seguridad de Firebase.
-\end{itemize}
+\multirow{2}{=}{Notificaciones y sincronización} 
+& RF5.1 & El motorizado debe recibir notificaciones push automáticas cuando se le asigne un nuevo pedido. \\
+& RF5.2 & El cliente debe recibir notificaciones push sobre cambios de estado del pedido. \\ \midrule
+
+\multirow{2}{=}{Seguridad y consistencia} 
+& RF6.1 & El sistema debe asegurar el acceso por roles (cada usuario solo ve lo que le corresponde). \\
+& RF6.2 & El sistema debe cifrar las comunicaciones mediante TLS y proteger el acceso a datos mediante reglas de seguridad de Firebase. \\
+
+\end{longtable}
 
 \subsection{Requisitos no funcionales}
 
-\subsubsection{Rendimiento}
+\begin{longtable}{@{}p{3.5cm}p{1.5cm}p{10cm}@{}}
+\caption{Requisitos no funcionales del sistema} \\
+\toprule
+\textbf{Categoría} & \textbf{Código} & \textbf{Descripción} \\ 
+\midrule
+\endfirsthead
 
-\begin{itemize}
-    \item \textbf{RNF1.1}: El sistema debe procesar la estimación de dimensiones de un paquete mediante IA en menos de 10 segundos después de subir la foto.
-    \item \textbf{RNF1.2}: El dashboard web debe cargar la información principal en menos de 5 segundos.
-\end{itemize}
+\multicolumn{3}{c}%
+{\tablename\ \thetable{} -- continuación de la página anterior} \\
+\toprule
+\textbf{Categoría} & \textbf{Código} & \textbf{Descripción} \\ 
+\midrule
+\endhead
 
-\subsubsection{Disponibilidad}
+\midrule \multicolumn{3}{r}{{Continúa en la siguiente página}} \\ 
+\bottomrule
+\endfoot
 
-\begin{itemize}
-    \item \textbf{RNF2.1}: El sistema debe mantener una disponibilidad mínima del 99.5\% aprovechando la infraestructura cloud de Firebase.
-    \item \textbf{RNF2.2}: Debe existir backup automático de datos en Firebase para evitar pérdida de información.
-\end{itemize}
+\bottomrule
+\endlastfoot
 
-\subsubsection{Seguridad}
+% ---------- CONTENIDO ----------
 
-\begin{itemize}
-    \item \textbf{RNF3.1}: Toda comunicación entre cliente y servidor debe usar cifrado SSL/TLS (implementado por defecto en Firebase).
-    \item \textbf{RNF3.2}: Las contraseñas deben almacenarse de forma segura mediante Firebase Auth.
-    \item \textbf{RNF3.3}: El acceso a datos debe estar protegido mediante reglas de seguridad basadas en roles.
-\end{itemize}
+\multirow{2}{=}{Rendimiento}
+& RNF1.1 & El sistema debe procesar la estimación de dimensiones de un paquete mediante IA en menos de 10 segundos después de subir la foto. \\
+& RNF1.2 & El dashboard web debe cargar la información principal en menos de 5 segundos. \\ \midrule
 
-\subsubsection{Compatibilidad}
+\multirow{2}{=}{Disponibilidad}
+& RNF2.1 & El sistema debe mantener una disponibilidad mínima del 99.5\% aprovechando la infraestructura cloud de Firebase. \\
+& RNF2.2 & Debe existir backup automático de datos en Firebase para evitar pérdida de información. \\ \midrule
 
-\begin{itemize}
-    \item \textbf{RNF4.1}: La aplicación móvil debe ser compatible con dispositivos Android 12.0 (API level 31) o superior, considerando el uso de terminales de gama media a baja.
-    \item \textbf{RNF4.2}: El dashboard web debe funcionar correctamente en navegadores modernos (Chrome, Firefox, Edge).
-\end{itemize}
+\multirow{3}{=}{Seguridad}
+& RNF3.1 & Toda comunicación entre cliente y servidor debe usar cifrado SSL/TLS (implementado por defecto en Firebase). \\
+& RNF3.2 & Las contraseñas deben almacenarse de forma segura mediante Firebase Auth. \\
+& RNF3.3 & El acceso a datos debe estar protegido mediante reglas de seguridad basadas en roles. \\ \midrule
 
-\subsubsection{Usabilidad}
+\multirow{2}{=}{Compatibilidad}
+& RNF4.1 & La aplicación móvil debe ser compatible con dispositivos Android 12.0 (API level 31) o superior, considerando el uso de terminales de gama media a baja. \\
+& RNF4.2 & El dashboard web debe funcionar correctamente en navegadores modernos (Chrome, Firefox, Edge). \\ \midrule
 
-\begin{itemize}
-    \item \textbf{RNF5.1}: La interfaz debe ser intuitiva y permitir completar las tareas principales sin necesidad de capacitación extensa.
-    \item \textbf{RNF5.2}: Los mensajes de error deben ser claros y comprensibles.
-\end{itemize}
+\multirow{2}{=}{Usabilidad}
+& RNF5.1 & La interfaz debe ser intuitiva y permitir completar las tareas principales sin necesidad de capacitación extensa. \\
+& RNF5.2 & Los mensajes de error deben ser claros y comprensibles. \\ \midrule
 
-\subsubsection{Fiabilidad del Modelo de IA}
+\multirow{2}{=}{Fiabilidad del Modelo de IA}
+& RNF6.1 & El modelo de IA debe tener un error promedio menor al 20\% en la estimación de dimensiones cuando se proporciona un objeto de referencia reconocible. \\
+& RNF6.2 & El sistema debe permitir corrección manual de las dimensiones estimadas. \\ \midrule
 
-\begin{itemize}
-    \item \textbf{RNF6.1}: El modelo de IA debe tener un error promedio menor al 20\% en la estimación de dimensiones cuando se proporciona un objeto de referencia reconocible.
-    \item \textbf{RNF6.2}: El sistema debe permitir corrección manual de las dimensiones estimadas.
-\end{itemize}
+\multirow{5}{=}{Cumplimiento Legal}
+& RNF7.1 & El sistema debe cumplir con la Ley N.º 29733 - Ley de Protección de Datos Personales del Perú. \\
+& RNF7.2 & Debe implementarse un consentimiento informado al registrar usuarios, indicando qué datos personales se recopilan, para qué se utilizan, quién tendrá acceso y los derechos ARCO. \\
+& RNF7.3 & Las fotografías de paquetes y evidencias deben almacenarse de forma segura y solo ser accesibles por usuarios autorizados. \\
+& RNF7.4 & Los datos de ubicación de motorizados solo deben ser visibles durante entregas activas. \\
+& RNF7.5 & Debe existir una Política de Privacidad clara y accesible en la aplicación. \\ \midrule
 
-\subsubsection{Cumplimiento Legal}
+\multirow{2}{=}{Mantenibilidad}
+& RNF8.1 & El código debe estar documentado para facilitar su comprensión y futuras modificaciones. \\
+& RNF8.2 & El sistema debe generar logs básicos de errores críticos. \\ \midrule
 
-\begin{itemize}
-    \item \textbf{RNF7.1}: El sistema debe cumplir con la Ley N.º 29733 - Ley de Protección de Datos Personales del Perú.
-    
-    \item \textbf{RNF7.2}: Debe implementarse un consentimiento informado al registrar usuarios, indicando:
-    \begin{itemize}
-        \item Qué datos personales se recopilan (nombre, correo, teléfono, dirección, fotografías)
-        \item Para qué se utilizarán (gestión de pedidos, seguimiento de entregas)
-        \item Quién tendrá acceso (administradores, motorizados asignados)
-        \item Derechos del usuario (acceso, rectificación, cancelación, oposición - ARCO)
-    \end{itemize}
-    
-    \item \textbf{RNF7.3}: Las fotografías de paquetes y evidencias deben almacenarse de forma segura y solo ser accesibles por usuarios autorizados.
-    
-    \item \textbf{RNF7.4}: Los datos de ubicación de motorizados solo deben ser visibles durante entregas activas.
-    
-    \item \textbf{RNF7.5}: Debe existir una Política de Privacidad clara y accesible en la aplicación.
-\end{itemize}
+\multirow{3}{=}{Eficiencia de recursos}
+& RNF9.1 & Las imágenes capturadas deben comprimirse automáticamente a un tamaño máximo de 500KB para minimizar el uso de datos móviles. \\
+& RNF9.2 & El procesamiento intensivo (análisis de IA) debe ejecutarse en el backend (Cloud Functions) para no sobrecargar dispositivos de recursos limitados. \\
+& RNF9.3 & La aplicación debe utilizar thumbnails (máximo 30KB) en listas y cargar imágenes completas solo cuando el usuario lo solicite explícitamente. \\
 
-\subsubsection{Mantenibilidad}
-
-\begin{itemize}
-    \item \textbf{RNF8.1}: El código debe estar documentado para facilitar su comprensión y futuras modificaciones.
-    \item \textbf{RNF8.2}: El sistema debe generar logs básicos de errores críticos.
-\end{itemize}
-
-\subsubsection{Eficiencia de recursos}
-
-\begin{itemize}
-    \item \textbf{RNF9.1}: Las imágenes capturadas deben comprimirse automáticamente a un tamaño máximo de 500KB para minimizar el uso de datos móviles.
-    
-    \item \textbf{RNF9.2}: El procesamiento intensivo (análisis de IA) debe ejecutarse en el backend (Cloud Functions) para no sobrecargar dispositivos de recursos limitados.
-    
-    \item \textbf{RNF9.3}: La aplicación debe utilizar thumbnails (máximo 30KB) en listas y cargar imágenes completas solo cuando el usuario lo solicite explícitamente.
-\end{itemize}
+\end{longtable}
 
 \subsection{Matriz de trazabilidad: necesidades vs. requerimientos}
 
@@ -246,7 +235,7 @@ Las restricciones identificadas en la fase de empatía condicionan las decisione
 
 \subsubsection{Restricciones económicas}
 
-Las microempresas de delivery requieren tecnologías de bajo costo que respalden su operación sin comprometer su sostenibilidad financiera. Dado su limitado presupuesto y la necesidad de costos operativos escalables, no pueden asumir gastos fijos elevados por infraestructura o licencias. Por ello, esta tesis emplea las capas gratuitas de servicios cloud (Firebase Free Tier) para desarrollar, prototipar y validar la solución sin incurrir en costos significativos durante la fase académica.
+Las microempresas de \textit{delivery} requieren tecnologías de bajo costo que respalden su operación sin comprometer su sostenibilidad financiera. Dado su limitado presupuesto y la necesidad de costos operativos escalables, no pueden asumir gastos fijos elevados por infraestructura o licencias. Por ello, esta tesis emplea las capas gratuitas de servicios cloud (Firebase Free Tier) para desarrollar, prototipar y validar la solución sin incurrir en costos significativos durante la fase académica.
 
 \subsubsection{Restricciones técnicas}
 
@@ -277,11 +266,58 @@ No se incluyen optimizaciones avanzadas ni características empresariales como r
 Basándose en los requerimientos funcionales y no funcionales definidos, el sistema requiere una arquitectura distribuida compuesta por:
 
 \begin{itemize}
-    \item \textbf{Capa de presentación}: Interfaces móviles y web
-    \item \textbf{Capa de lógica de negocio}: Procesamiento serverless, reglas de negocio
+    \item \textbf{Capa de presentación}: App móvile y App web
+    \item \textbf{Capa de lógica de negocio}: Procesamiento serverless, funciones serverless
     \item \textbf{Capa de datos}: Base de datos, almacenamiento de archivos, autenticación
-    \item \textbf{Servicios complementarios}: Geolocalización, notificaciones, procesamiento IA
+    \item \textbf{Capa de servicios}: Geolocalización, notificaciones, procesamiento IA
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=0.8cm and 1.2cm,
+        box/.style={rectangle, draw=gray!70, rounded corners, minimum width=3cm, minimum height=1cm, align=center, fill=blue!5},
+        layerbox/.style={rectangle, draw=gray!60, rounded corners, minimum width=13cm, minimum height=2cm, align=center, fill=gray!10},
+        label/.style={font=\small\bfseries, anchor=south west, text=black}
+    ]
+    
+    % CAPA DE PRESENTACIÓN
+    \node[layerbox] (capa1) {};
+    \node[label] at (capa1.north west) [yshift=0.3cm] (label1) {CAPA DE PRESENTACIÓN};
+    \node[box] (appmov) at ([xshift=-2cm]capa1.center) {App móvil};
+    \node[box] (appweb) at ([xshift=2cm]capa1.center) {App web};
+    
+    % LÓGICA DE NEGOCIO
+    \node[layerbox, below=1.3cm of capa1, fill=blue!5!gray!10] (capa2) {};
+    \node[label] at (capa2.north west) [yshift=0.3cm] (label2) {LÓGICA DE NEGOCIO};
+    \node[box, fill=blue!10] (proc) at ([xshift=-2cm]capa2.center) {Procesamiento\\Serverless};
+    \node[box, fill=blue!10] (func) at ([xshift=2cm]capa2.center) {Función Serverless};
+    
+    % CAPA DE DATOS
+    \node[layerbox, below=1.3cm of capa2, fill=green!5!gray!10] (capa3) {};
+    \node[label] at (capa3.north west) [yshift=0.3cm] (label3) {CAPA DE DATOS};
+    \node[box, fill=green!10] (alm) at ([xshift=-4cm]capa3.center) {Almacenamiento de\\archivos};
+    \node[box, fill=green!10] (aut) at (capa3.center) {Autenticación};
+    \node[box, fill=green!10] (bd) at ([xshift=4cm]capa3.center) {Base de datos};
+    
+    % CAPA DE SERVICIOS
+    \node[layerbox, below=1.3cm of capa3, fill=orange!5!gray!10] (capa4) {};
+    \node[label] at (capa4.north west) [yshift=0.3cm] (label4) {CAPA DE SERVICIOS};
+    \node[box, fill=orange!10] (not) at ([xshift=-4cm]capa4.center) {Notificaciones};
+    \node[box, fill=orange!10] (geo) at (capa4.center) {Geolocalización};
+    \node[box, fill=orange!10] (ia) at ([xshift=4cm]capa4.center) {Procesamiento IA};
+    
+    % Flechas de conexión
+    \draw[->, thick, gray!70] (capa1) -- (capa2);
+    \draw[->, thick, gray!70] (capa2) -- (capa3);
+    \draw[->, thick, gray!70] (capa3) -- (capa4);
+    \end{tikzpicture}
+    \caption{Arquitectura de capas del sistema}
+    \label{fig:arquitectura-capas}
+    {\small \textit{Fuente:} Elaboración propia}
+\end{figure}
+
+
 
 Esta arquitectura conceptual será materializada en la Fase 3 mediante la evaluación de alternativas tecnológicas específicas.
 
@@ -326,18 +362,7 @@ Se identifican tres alternativas principales de arquitectura que cumplen con los
 
 \subsubsection{Alternativa 1: Ecosistema Firebase/Google Cloud}
 
-\textbf{Descripción técnica}: Arquitectura completamente basada en servicios de Google Cloud Platform, utilizando Firebase como Backend-as-a-Service (BaaS). Los componentes principales incluyen:
-
-\begin{itemize}
-    \item Firebase Firestore (base de datos NoSQL en tiempo real)
-    \item Firebase Authentication (gestión de usuarios y roles)
-    \item Firebase Storage (almacenamiento de imágenes)
-    \item Firebase Cloud Functions (lógica serverless)
-    \item Firebase Cloud Messaging (notificaciones push)
-    \item Firebase Hosting (dashboard web)
-    \item Google Maps API (geolocalización)
-    \item Integración con modelos de IA multimodal (Gemini, Claude, GPT-4 Vision) mediante Cloud Functions
-\end{itemize}
+\textbf{Descripción técnica}: Arquitectura completamente basada en servicios de Google Cloud Platform, utilizando Firebase como Backend-as-a-Service (BaaS). Los componentes principales incluyen: Firebase Firestore (base de datos NoSQL en tiempo real), Firebase Authentication (gestión de usuarios y roles), Firebase Storage (almacenamiento de imágenes), Firebase Cloud Functions (lógica serverless), Firebase Cloud Messaging (notificaciones push), Firebase Hosting (dashboard web), Google Maps API (geolocalización), y integración con modelos de IA multimodal (Gemini, Claude, GPT-4 Vision) mediante Cloud Functions.
 
 \textbf{Arquitectura de telecomunicaciones}:
 \begin{itemize}
@@ -376,19 +401,8 @@ Se identifican tres alternativas principales de arquitectura que cumplen con los
 
 \subsubsection{Alternativa 2: Amazon Web Services (AWS)}
 
-\textbf{Descripción técnica}: Arquitectura basada en servicios de AWS utilizando:
+\textbf{Descripción técnica}: Arquitectura basada en servicios de AWS utilizando: Amazon RDS o DynamoDB (base de datos), AWS Cognito (autenticación), Amazon S3 (almacenamiento), AWS Lambda (funciones serverless), Amazon SNS (notificaciones), Amazon CloudFront (CDN), Amazon API Gateway (exposición de APIs), y EC2 o Elastic Beanstalk para el dashboard web. Integración con servicios de IA mediante Amazon Rekognition o APIs externas.
 
-\begin{itemize}
-    \item Amazon RDS o DynamoDB (base de datos)
-    \item AWS Cognito (autenticación)
-    \item Amazon S3 (almacenamiento)
-    \item AWS Lambda (funciones serverless)
-    \item Amazon SNS (notificaciones)
-    \item Amazon CloudFront (CDN)
-    \item Amazon API Gateway (exposición de APIs)
-    \item EC2 o Elastic Beanstalk (dashboard web)
-    \item Integración con servicios de IA mediante Amazon Rekognition o APIs externas
-\end{itemize}
 
 \textbf{Arquitectura de telecomunicaciones}:
 \begin{itemize}
@@ -428,16 +442,7 @@ Se identifican tres alternativas principales de arquitectura que cumplen con los
 
 \subsubsection{Alternativa 3: Solución híbrida con backend propio}
 
-\textbf{Descripción técnica}: Backend personalizado desarrollado con Node.js/Express o Python/Django desplegado en servicios de hosting como Heroku, DigitalOcean o Railway. Componentes:
-
-\begin{itemize}
-    \item Base de datos PostgreSQL o MongoDB gestionada
-    \item Autenticación con JWT
-    \item Almacenamiento en AWS S3 o Cloudinary
-    \item Integración directa con APIs de IA multimodal
-    \item Notificaciones mediante servicios de terceros (OneSignal, Firebase Cloud Messaging)
-    \item Frontend web con React deployado en Vercel o Netlify
-\end{itemize}
+\textbf{Descripción técnica}: Backend personalizado desarrollado con Node.js/Express o Python/Django desplegado en servicios de hosting como Heroku, DigitalOcean o Railway. Base de datos PostgreSQL o MongoDB gestionada. Autenticación con JWT. Almacenamiento en AWS S3 o Cloudinary. Integración directa con APIs de IA multimodal. Notificaciones mediante servicios de terceros (OneSignal, Firebase Cloud Messaging). Frontend web con React deployado en Vercel o Netlify.
 
 \textbf{Arquitectura de telecomunicaciones}:
 \begin{itemize}
@@ -517,14 +522,28 @@ Se reconoce el riesgo de vendor lock-in con Google Cloud Platform, pero se consi
 
 Una vez seleccionada la arquitectura general, se detallan los componentes específicos que se utilizarán:
 
-\begin{table}[H]
-\centering
+\begin{longtable}{@{}p{3.5cm}p{3.5cm}p{6cm}@{}}
 \caption{Componentes seleccionados del ecosistema Firebase.}
-\label{tab:componentes_firebase}
-\begin{tabular}{@{}p{3.5cm}p{3.5cm}p{6cm}@{}}
+\label{tab:componentes_firebase} \\
 \toprule
 \textbf{Componente del sistema} & \textbf{Tecnología seleccionada} & \textbf{Justificación} \\
 \midrule
+\endfirsthead
+
+\multicolumn{3}{c}%
+{\tablename\ \thetable\ -- \textit{Continuación}} \\
+\toprule
+\textbf{Componente del sistema} & \textbf{Tecnología seleccionada} & \textbf{Justificación} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{3}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
 Base de datos en tiempo real & Firebase Firestore & NoSQL en tiempo real con sincronización automática, escalabilidad horizontal, modelo flexible para datos logísticos variables \\
 \midrule
 Servicio de Autenticación & Firebase Authentication & Gestión de sesiones segura, soporte de roles mediante custom claims, integración nativa con Firestore Security Rules \\
@@ -537,18 +556,17 @@ Aplicación móvil & Android Nativo (Kotlin) & Rendimiento óptimo, acceso compl
 \midrule
 App Web & React.js + Firebase Hosting & Framework moderno con alto rendimiento, despliegue global automático con CDN, certificado SSL incluido \\
 \midrule
-Notificaciones push & Firebase Cloud Messaging & Integración nativa con Android, envío masivo eficiente, segmentación por roles, delivery garantizado \\
+Notificaciones push & Firebase Cloud Messaging & Integración nativa con Android, envío masivo eficiente, segmentación por roles, \textit{delivery} garantizado \\
 \midrule
 Geolocalización & Google Maps API & Precisión superior en ubicaciones de Lima, integración directa con ecosistema Google, APIs de rutas y geocodificación \\
 \midrule
 Procesamiento de IA & GPT-4 / Gemini / Claude & Modelos multimodales capaces de analizar imágenes y estimar dimensiones mediante razonamiento visual contextual \\
-\bottomrule
-\end{tabular}
-\end{table}
+
+\end{longtable}
 
 \subsection{Conclusión de la fase de ideación}
 
-La selección del ecosistema Firebase/Google Cloud se fundamenta en un análisis multicriterio riguroso que pondera aspectos técnicos, económicos y operativos relevantes para el contexto del proyecto. Esta decisión equilibra las necesidades de pequeñas empresas de delivery con las restricciones de un proyecto de tesis, proporcionando una base tecnológica robusta, escalable y económicamente viable para el desarrollo del prototipo y su eventual adopción comercial.
+La selección del ecosistema Firebase/Google Cloud se fundamenta en un análisis multicriterio riguroso que pondera aspectos técnicos, económicos y operativos relevantes para el contexto del proyecto. Esta decisión equilibra las necesidades de pequeñas empresas de \textit{delivery} con las restricciones de un proyecto de tesis, proporcionando una base tecnológica robusta, escalable y económicamente viable para el desarrollo del prototipo y su eventual adopción comercial.
 
 % ------------------------------------------------------------------
 \section{Fase 4: Prototipar – Diseño técnico detallado}
@@ -587,6 +605,51 @@ La arquitectura del sistema se basa en un modelo cliente-servidor distribuido en
     \item Firebase Storage (almacenamiento de imágenes)
     \item Firebase Authentication (gestión de usuarios)
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        node distance=0.8cm and 1.2cm,
+        box/.style={rectangle, draw=gray!70, rounded corners, minimum width=3cm, minimum height=1cm, align=center, fill=blue!5},
+        layerbox/.style={rectangle, draw=gray!60, rounded corners, minimum width=13cm, minimum height=2cm, align=center, fill=gray!10},
+        label/.style={font=\small\bfseries, anchor=south west, text=black}
+    ]
+    
+    % CAPA DE PRESENTACIÓN
+    \node[layerbox] (capa1) {};
+    \node[label] at (capa1.north west) [yshift=0.3cm] (label1) {CAPA DE PRESENTACIÓN};
+    \node[box] (appmov) at ([xshift=-2cm]capa1.center) {Android Nativo\\(Kotlin)};
+    \node[box] (appweb) at ([xshift=2cm]capa1.center) {React.js +\\Firebase Hosting};
+    
+    % LÓGICA DE NEGOCIO
+    \node[layerbox, below=1.3cm of capa1, fill=blue!5!gray!10] (capa2) {};
+    \node[label] at (capa2.north west) [yshift=0.3cm] (label2) {LÓGICA DE NEGOCIO};
+    \node[box, fill=blue!10] (proc) at ([xshift=-2cm]capa2.center) {Firebase Cloud\\Functions};
+    \node[box, fill=blue!10] (func) at ([xshift=2cm]capa2.center) {Reglas de negocio\\y validaciones};
+    
+    % CAPA DE DATOS
+    \node[layerbox, below=1.3cm of capa2, fill=green!5!gray!10] (capa3) {};
+    \node[label] at (capa3.north west) [yshift=0.3cm] (label3) {CAPA DE DATOS};
+    \node[box, fill=green!10] (alm) at ([xshift=-4cm]capa3.center) {Firebase\\Storage};
+    \node[box, fill=green!10] (aut) at (capa3.center) {Firebase\\Authentication};
+    \node[box, fill=green!10] (bd) at ([xshift=4cm]capa3.center) {Firebase\\Firestore};
+    
+    % CAPA DE SERVICIOS
+    \node[layerbox, below=1.3cm of capa3, fill=orange!5!gray!10] (capa4) {};
+    \node[label] at (capa4.north west) [yshift=0.3cm] (label4) {CAPA DE SERVICIOS};
+    \node[box, fill=orange!10] (not) at ([xshift=-4cm]capa4.center) {Firebase Cloud\\Messaging};
+    \node[box, fill=orange!10] (geo) at (capa4.center) {Google Maps\\API};
+    \node[box, fill=orange!10] (ia) at ([xshift=4cm]capa4.center) {GPT-4};
+    
+    % Flechas de conexión
+    \draw[->, thick, gray!70] (capa1) -- (capa2);
+    \draw[->, thick, gray!70] (capa2) -- (capa3);
+    \draw[->, thick, gray!70] (capa3) -- (capa4);
+    \end{tikzpicture}
+    \caption{Arquitectura de capas del sistema con tecnologías seleccionadas}
+    \label{fig:arquitectura-capas}
+    {\small \textit{Fuente:} Elaboración propia}
+\end{figure}
 
 \subsubsection{Flujo de datos y comunicación}
 
@@ -648,7 +711,7 @@ El módulo de IA utiliza modelos de lenguaje multimodal (Gemini 2.0 Flash, Claud
 \begin{itemize}
     \item \textbf{Rol del sistema}: ``Eres un asistente especializado en logística que estima dimensiones de paquetes...''
     
-    \item \textbf{Contexto}: ``El motorizado está en el domicilio del remitente fotografiando un paquete para delivery en Lima, Perú...''
+    \item \textbf{Contexto}: ``El motorizado está en el domicilio del remitente fotografiando un paquete para \textit{delivery} en Lima, Perú...''
     
     \item \textbf{Tarea específica}: ``Analiza la imagen y estima las dimensiones (alto, ancho, largo) en centímetros...''
     
@@ -766,4 +829,4 @@ Plazo de conservación & Eliminación automática tras 90 días de inactividad \
 
 El diseño técnico propuesto combina robustez tecnológica, viabilidad económica y eficiencia operativa mediante una arquitectura serverless basada en Firebase, que ofrece escalabilidad automática, costos proporcionales al uso, sincronización en tiempo real, seguridad normativa y desarrollo ágil. Los componentes detallados se documentan en el Anexo D, permitiendo que este capítulo se centre en la justificación de alto nivel.
 
-El diseño técnico propuesto establece una base sólida que será evaluada en el Capítulo 4 mediante análisis de viabilidad técnica, económica y de sostenibilidad, validando su capacidad para cumplir los requerimientos establecidos en el contexto de las pymes de delivery en Lima.
+El diseño técnico propuesto establece una base sólida que será evaluada en el Capítulo 4 mediante análisis de viabilidad técnica, económica y de sostenibilidad, validando su capacidad para cumplir los requerimientos establecidos en el contexto de las pymes de \textit{delivery} en Lima.
