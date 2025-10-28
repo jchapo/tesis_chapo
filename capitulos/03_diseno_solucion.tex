@@ -688,6 +688,110 @@ REST API & Integración con servicios externos & Interoperabilidad con Google Ma
 
 El siguiente diagrama describe el flujo completo desde que un cliente captura la foto de un paquete hasta que recibe las dimensiones estimadas:
 
+Para incluirlo como figura formal en tu tesis, aquí está el código con el entorno figure, caption y label para referencias cruzadas:
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    scale=0.8,
+    transform shape,
+    % Estilos
+    actor/.style={rectangle, draw=black, thick, minimum width=2.1cm, minimum height=0.7cm, align=center, fill=blue!10, font=\scriptsize},
+    message/.style={-{Stealth[length=2mm]}, thick},
+    return/.style={-{Stealth[length=2mm]}, thick, dashed},
+    state/.style={rectangle, rounded corners, draw=orange, thick, fill=orange!10, minimum width=1.8cm, minimum height=0.5cm, font=\tiny, align=center},
+    note/.style={rectangle, draw=gray, dashed, fill=yellow!10, align=center, font=\tiny},
+    every node/.style={font=\tiny}
+]
+% Título
+%\node[font=\large\bfseries, scale=1.25] at (5,1.5) {Diagrama de Flujo de Llamadas - Sistema de Delivery};
+
+% Actores
+\node[actor] (remitente) at (0,0) {Cliente\\Remitente};
+\node[actor] (motrecojo) at (2.5,0) {Motorizado\\Recojo};
+\node[actor] (admin) at (5,0) {Admin\\Base Central};
+\node[actor] (motentrega) at (7.5,0) {Motorizado\\Entrega};
+\node[actor] (destinatario) at (10,0) {Cliente\\Destinatario};
+
+% Líneas de vida
+\draw[thick, dotted] (remitente.south) -- +(0,-25);
+\draw[thick, dotted] (motrecojo.south) -- +(0,-25);
+\draw[thick, dotted] (admin.south) -- +(0,-25);
+\draw[thick, dotted] (motentrega.south) -- +(0,-25);
+\draw[thick, dotted] (destinatario.south) -- +(0,-25);
+
+% ORIGEN DEL ENVÍO
+\node[note, minimum width=2cm] at (0,-1.2) {Registra pedido\\Foto + IA\\Dimensiones};
+\node[state] at (0,-2.2) {PENDIENTE\\RECOJO};
+
+% PRIMERA MILLA - RECOJO
+\draw[message] ([yshift=-3cm]remitente.south) -- ([yshift=-3cm]motrecojo.south) 
+    node[midway, above, sloped] {Notificación pedido};
+
+\node[note, minimum width=2cm] at (2.5,-3.9) {Navega a\\dirección origen};
+
+\draw[message] ([yshift=-4.6cm]remitente.south) -- ([yshift=-4.6cm]motrecojo.south) 
+    node[midway, above, sloped] {Entrega paquete};
+
+\node[note, minimum width=2cm] at (2.5,-5.5) {Verifica y\\toma foto};
+
+\node[state] at (2.5,-6.3) {RECOGIDO\\EN TRÁNSITO};
+
+% TRASLADO A BASE CENTRAL
+\node[note, minimum width=2cm] at (2.5,-7.2) {Transporta a\\Base Central};
+
+\draw[message] ([yshift=-8cm]motrecojo.south) -- ([yshift=-8cm]admin.south) 
+    node[midway, above, sloped] {Entrega en base};
+
+\node[note, minimum width=2cm] at (5,-8.9) {Escanea y\\registra llegada};
+
+\node[state] at (5,-9.7) {EN BASE CENTRAL\\LISTO};
+
+% ASIGNACIÓN Y DESPACHO
+\node[note, minimum width=2cm] at (5,-10.6) {Revisa zona\\y asigna};
+
+\draw[message] ([yshift=-11.4cm]admin.south) -- ([yshift=-11.4cm]motentrega.south) 
+    node[midway, above, sloped] {Notifica asignación};
+
+\draw[message] ([yshift=-12.2cm]motentrega.south) -- ([yshift=-12.2cm]admin.south) 
+    node[midway, above, sloped] {Llega y recoge};
+
+\node[state] at (7.5,-13.1) {EN RUTA\\ENTREGA};
+
+% ÚLTIMA MILLA - COORDINACIÓN
+\draw[message] ([yshift=-13.9cm]motentrega.south) -- ([yshift=-13.9cm]destinatario.south) 
+    node[midway, above, sloped] {Contacta cliente};
+
+\draw[return] ([yshift=-14.7cm]destinatario.south) -- ([yshift=-14.7cm]motentrega.south) 
+    node[midway, above, sloped] {Confirma disponibilidad};
+
+\node[note, minimum width=2cm] at (7.5,-15.6) {Navega con GPS\\al destino};
+
+% ENTREGA FINAL
+\draw[message] ([yshift=-16.4cm]motentrega.south) -- ([yshift=-16.4cm]destinatario.south) 
+    node[midway, above, sloped] {Llega a dirección};
+
+\draw[message] ([yshift=-17.2cm]destinatario.south) -- ([yshift=-17.2cm]motentrega.south) 
+    node[midway, above, sloped] {Verifica identidad};
+
+\node[note, minimum width=2cm] at (7.5,-18.1) {Toma foto\\evidencia};
+
+\node[state] at (10,-18.9) {ENTREGADO\\COMPLETADO};
+
+% TRAZABILIDAD COMPLETA
+\draw[message] ([yshift=-19.7cm]remitente.south) -- ([yshift=-19.7cm]remitente.south -| 5,0) 
+    node[midway, above, sloped] {Consulta historial};
+
+\node[note, minimum width=4cm] at (5,-20.8) {Foto recojo + Timestamp\\Foto entrega + Confirmación};
+
+\draw[return] ([yshift=-21.9cm]destinatario.south -| 5,0) -- ([yshift=-21.9cm]destinatario.south) 
+    node[midway, above, sloped] {Confirma recepción};
+
+\end{tikzpicture}
+\caption{Diagrama de flujo de entrega del sistema de delivery propuesto}
+\label{fig:callflow-delivery}
+\end{figure}
+
 \begin{enumerate}
     \item Cliente captura foto del paquete con objeto de referencia
     \item App móvil comprime imagen localmente (máx. 500KB)
